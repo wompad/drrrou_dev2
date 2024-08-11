@@ -1,4 +1,4 @@
-
+# Ignore the application/config/database.php file
 application/config/database.php
 
 # IDE Files

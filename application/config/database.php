@@ -76,10 +76,10 @@ $query_builder = TRUE;
 $host = gethostbyname($_SERVER['SERVER_NAME']);
 
 $db['default'] = array(
-	'dsn'	=> "pgsql:host=172.31.240.238;port=5432;dbname=cdrrims_db_dev",
-	'hostname' => '172.31.240.238',
-	'username' => 'cdrrims',
-	'password' => 'M@tth3w6cdrr!m$',
+	'dsn'	=> "pgsql:host=localhost;port=5432;dbname=cdrrims_db_dev_demo",
+	'hostname' => 'localhost',
+	'username' => 'postgres',
+	'password' => 'dswd123$',
 	'database' => '',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',

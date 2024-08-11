@@ -32,11 +32,10 @@
 				     <li><a id="report_summary" data-toggle="tab" href="#reportsummary" style="font-size: 15px"> <span class="fa fa-file"></span> Report Summary</a></li>
 	        </ul>
 	  </li>
-	  
 	</ul>
 	<div style="left:50%; top:45%; position:fixed; z-index:99999; background-color:#304456; padding-top:20px; padding-bottom:20px; padding-left:50px; padding-right:45px; border-radius:5px; color:#fff" id="loader">
-    <center><div class="loader"></div></center>
-    Loading data...
+    	<center><div class="loader"></div></center>
+    	Loading data...
   	</div>
 	<div class="tab-content">
 		<br>
@@ -60,7 +59,7 @@
 			</div>
 		</div>
 
-	  <div id="reportsummary" class="tab-pane fade">
+	<div id="reportsummary" class="tab-pane fade">
 	  	<ul class="nav nav-tabs">
 		  <li class="active">
 		  	<a id="toexcel_all_summary" data-toggle="tab" class="btn btn-sm btn-danger tabpill" href="#allsummary" style="border-radius:0px; color:#fff; border-radius: 5px; padding: 5px; font-size: 15px">All Summary</a>
@@ -613,14 +612,16 @@
 	  	</div>
 	  </div>
 	  <div id="disastermap" class="tab-pane fade">
-	  	<center>
-		  	<div class="col-sm-12" id="dmap" style="font-size:30px">
-		  		<div id="mapid" style="width:50%; height: 84vh"></div>
-		  	</div>
-		</center>
+		  	<center>
+			  	<div class="col-sm-12" id="dmap" style="font-size:30px">
+			  		<div id="mapid" style="width:50%; height: 84vh"></div>
+			  	</div>
+			</center>
 	  </div>
 	  <div id="narrative" class="tab-pane fade">
-	  	<iframe src="" style="width: 100%; height: 1500px; border: 0px; background-color: #F7F7F7; margin-top: 20px" id="frame_narrative_report"></iframe>
+	  		<iframe src="" style="width: 100%; height: 1500px; border: 0px; background-color: #F7F7F7; margin-top: 20px" id="frame_narrative_report">
+	  			
+	  		</iframe>
 	  </div>
 	  <div id="home" class="tab-pane fade in active">
 	  		<div class="col-md-8" style="color:#000; font-weight: bold; margin-top: 10px; font-size: 15px">
@@ -816,128 +817,130 @@
 		    </div>
 	  </div>
 	  <div id="menu1" class="tab-pane fade">
-	    <h3>Menu 1</h3>
-	    <p>Some content in menu 1.</p>
+		    <h3>Menu 1</h3>
+		    <p>Some content in menu 1.</p>
 	  </div>
 	  <div id="evacuation_stats" class="tab-pane fade">
-	  	<div class="col-md-12" style="margin-top:10px"><label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label></div>
-	  	<div class="col-md-3 pull-right" id="count_ec" style="font-weight:bold; font-size: 15px">
-
-	  	</div>
-	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	    	<div class="col-md-12" id="tbl_evac_stats" style="border:1px solid gray">
-	    		<table style="width:100%;">
-		    		<thead>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Department of Social Welfare and Development</th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; color: #000" colspan="12"><b>DISASTER RESPONSE, OPERATIONS, MONITORING AND INFORMATION CENTER</b></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Batasan Pambansa Complex, Constitution Hills</th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Quezon City</th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12"><br></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; color: #000" colspan="12"><b>STATUS OF EVACUATION CENTERS</b></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" id="asofdate_IEC" colspan="12">As of: </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" id="asoftime_IEC" colspan="12">Time: </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:left; font-weight:lighter; color: #000" colspan="12">Region:<b> <script>document.write(`${REGION}`)</script> </b> </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:left; font-weight:lighter; color: #000" id="disastertype_IEC" colspan="12"></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:left; font-weight:lighter; color: #000" id="disasterdate_IEC" colspan="12"></th>
-		    			</tr>
-		    		</thead>
-		    		<tbody>
-		    		</tbody>
-		    	</table>
-		  		<table style="width:100%" id="evac_stats">
-		  			<thead>
-		  				<tr>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">PLACE OF EVACUATION CENTER<br>Province/City/Municipality</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="2" colspan="2">No of ECs'</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">BRGY LOCATED (EC)</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">NAME OF EVACUATION CENTER</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="4">NUMBER SERVED</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">BRGY LOCATED (EVACUEES)</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">STATUS OF EC<br>(Newly-Opened/Re-opened/<br>Activated/Existing/Closed)</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">REMARKS</th>
-		  				</tr>
-		  				<tr>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="2">Families</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="2">Persons</th>
-		  				</tr>
-		  				<tr>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
-		  				</tr>		
-		  			</thead>
-		  			<tbody>
-		  				<tr style="background-color:red; color:#fff">
-		  					<th style="border: 1px solid #000; text-align:left; padding:2px;"><b><script>document.write(`${REGION}`)</script></b></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_ec_cum"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_ec_now"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_fam_cum"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_fam_now"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_per_cum"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_per_now"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
-		  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
-		  				</tr>
-		  			</tbody>
-		  			<tfoot>
-						<tr>
-							<td colspan="12" style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000"><center><strong>**** NOTHING FOLLOWS ****</strong></center></td>
-						</tr>
-						<tr>
-		    				<th style="text-align:center; font-weight:lighter" colspan="11"> </th>
-		    			</tr>
-						<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Prepared by: </th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Recommended by: </th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Approved by: </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12"> </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedby2"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedby2"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="sapprovedby2"></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedbypos2"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedbypos2"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="sapprovedbypos2"></th>
-		    			</tr>
-					</tfoot>
-		  		</table>
-		  	</div>	
-	  	</div>
+		  	<div class="col-md-12" style="margin-top:10px">
+		  		<label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label>
+		  	</div>
+		  	<div class="col-md-3 pull-right" id="count_ec" style="font-weight:bold; font-size: 15px"></div>
+		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		    	<div class="col-md-12" id="tbl_evac_stats" style="border:1px solid gray">
+		    		<table style="width:100%;">
+			    		<thead>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Department of Social Welfare and Development</th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; color: #000" colspan="12"><b>DISASTER RESPONSE, OPERATIONS, MONITORING AND INFORMATION CENTER</b></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Batasan Pambansa Complex, Constitution Hills</th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12">Quezon City</th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12"><br></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; color: #000" colspan="12"><b>STATUS OF EVACUATION CENTERS</b></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" id="asofdate_IEC" colspan="12">As of: </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" id="asoftime_IEC" colspan="12">Time: </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:left; font-weight:lighter; color: #000" colspan="12">Region:<b> <script>document.write(`${REGION}`)</script> </b> </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:left; font-weight:lighter; color: #000" id="disastertype_IEC" colspan="12"></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:left; font-weight:lighter; color: #000" id="disasterdate_IEC" colspan="12"></th>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    		</tbody>
+			    	</table>
+			  		<table style="width:100%" id="evac_stats">
+			  			<thead>
+			  				<tr>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">PLACE OF EVACUATION CENTER<br>Province/City/Municipality</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="2" colspan="2">No of ECs'</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">BRGY LOCATED (EC)</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">NAME OF EVACUATION CENTER</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="4">NUMBER SERVED</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">BRGY LOCATED (EVACUEES)</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">STATUS OF EC<br>(Newly-Opened/Re-opened/<br>Activated/Existing/Closed)</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" rowspan="3">REMARKS</th>
+			  				</tr>
+			  				<tr>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="2">Families</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000" colspan="2">Persons</th>
+			  				</tr>
+			  				<tr>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Cum</th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000">Now</th>
+			  				</tr>		
+			  			</thead>
+			  			<tbody>
+			  				<tr style="background-color:red; color:#fff">
+			  					<th style="border: 1px solid #000; text-align:left; padding:2px;"><b><script>document.write(`${REGION}`)</script></b></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_ec_cum"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_ec_now"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_fam_cum"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_fam_now"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_per_cum"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px" id="caraga_per_now"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
+			  					<th style="border: 1px solid #000; text-align:center; padding:2px"></th>
+			  				</tr>
+			  			</tbody>
+			  			<tfoot>
+							<tr>
+								<td colspan="12" style="border: 1px solid #000; text-align:center; padding:2px; background-color: #808080; color: #000"><center><strong>**** NOTHING FOLLOWS ****</strong></center></td>
+							</tr>
+							<tr>
+			    				<th style="text-align:center; font-weight:lighter" colspan="11"> </th>
+			    			</tr>
+							<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Prepared by: </th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Recommended by: </th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Approved by: </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="12"> </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedby2"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedby2"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="sapprovedby2"></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedbypos2"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedbypos2"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="sapprovedbypos2"></th>
+			    			</tr>
+						</tfoot>
+			  		</table>
+			  	</div>	
+		  	</div>
 	  </div>
 	  <div id="evacuation_stats_outside" class="tab-pane fade">
-	  	<br>
-		  	<div class="col-md-12" style="margin-top:10px"><label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label></div>
+	  		<br>
+		  	<div class="col-md-12" style="margin-top:10px">
+		  		<label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label>
+		  	</div>
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid gray;" id="tbl_evacuation_stats_outside">
 			    <table style="width:100%;">
 		    		<thead>
@@ -1037,7 +1040,7 @@
 		  	</div>
 	  </div>
 	  <div id="evacuation_sex_age" class="tab-pane fade">
-	  	<br>
+	  		<br>
 		  	<div class="col-md-12" style="margin-top:10px"><label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label></div>
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid gray;" id="tbl_evacuation_sex_age">
 			    <table style="width:100%;">
@@ -1288,105 +1291,107 @@
 		  	</div>
 	  </div>
 	  <div id="casualties" class="tab-pane fade">
-	  	<br>
-	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:40px">
-	  		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid gray;" id="tbl_ccasualties">
-			    <table style="width:100%;">
-		    		<thead>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Department of Social Welfare and Development</th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; color: #000"><b>DISASTER RESPONSE, OPERATIONS, MONITORING AND INFORMATION CENTER</b></th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Batasan Pambansa Complex, Constitution Hills</th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Quezon City</th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000"><br></th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; color: #000"><b>MASTERLIST OF CASUALTIES</b></th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000" id="asofdate_CEC">As of: </th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000" id="asoftime_CEC">Time: </th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000">Region:<b> <script>document.write(`${REGION}`)</script> </b> </th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000" id="disastertype_CEC"></th>
-		    			</tr>
-		    			<tr>
-		    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000" id="disasterdate_CEC"></th>
-		    			</tr>
-		    		</thead>
-		    		<tbody>
-		    		</tbody>
-		    	</table>
-		    	<table style="width:100%;" id="tbl_casualties">
-		    		<thead>
-		    			<tr>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">No.</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">NAME</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">AGE</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">SEX</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">ADDRESS</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">CASUALTIES</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">REMARKS</th>
-		    			</tr>
-		    			<tr>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">LASTNAME</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">FIRSTNAME</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">M.I.</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">PROVINCE</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">CITY/MUNICIPALITY</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">BARANGAY</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">DEAD</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">MISSING</th>
-		    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">INJURED</th>
-		    			</tr>
-		    		</thead>
-		    		<tbody>
-		    		</tbody>
-		    		<tfoot>
-						<tr>
-							<th colspan="13" style="border: 1px solid #000; background-color: #808080; color: #000"> <center>*** NOTHING FOLLOWS ***</center></th>
-						</tr>
-			    		<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="13"> </th>
-		    			</tr>
-						<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Prepared by: </th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Recommended by: </th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5">Approved by: </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="13"> </th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedby4"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedby4"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5" id="sapprovedby4"></th>
-		    			</tr>
-		    			<tr>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedbypos4"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedbypos4"></th>
-		    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5" id="sapprovedbypos4"></th>
-		    			</tr>
-					</tfoot>
-		    	</table>
-	    	</div>	
-	  	</div>
+		  	<br>
+		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:40px">
+		  		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border:1px solid gray;" id="tbl_ccasualties">
+				    <table style="width:100%;">
+			    		<thead>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Department of Social Welfare and Development</th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; color: #000"><b>DISASTER RESPONSE, OPERATIONS, MONITORING AND INFORMATION CENTER</b></th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Batasan Pambansa Complex, Constitution Hills</th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000">Quezon City</th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000"><br></th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; color: #000"><b>MASTERLIST OF CASUALTIES</b></th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000" id="asofdate_CEC">As of: </th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:center; font-weight:lighter; color: #000" id="asoftime_CEC">Time: </th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000">Region:<b> <script>document.write(`${REGION}`)</script> </b> </th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000" id="disastertype_CEC"></th>
+			    			</tr>
+			    			<tr>
+			    				<th colspan="13" style="text-align:left; font-weight:lighter; color: #000" id="disasterdate_CEC"></th>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    		</tbody>
+			    	</table>
+			    	<table style="width:100%;" id="tbl_casualties">
+			    		<thead>
+			    			<tr>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">No.</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">NAME</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">AGE</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">SEX</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">ADDRESS</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" colspan="3">CASUALTIES</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000" rowspan="2">REMARKS</th>
+			    			</tr>
+			    			<tr>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">LASTNAME</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">FIRSTNAME</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">M.I.</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">PROVINCE</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">CITY/MUNICIPALITY</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">BARANGAY</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">DEAD</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">MISSING</th>
+			    				<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">INJURED</th>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    		</tbody>
+			    		<tfoot>
+							<tr>
+								<th colspan="13" style="border: 1px solid #000; background-color: #808080; color: #000"> <center>*** NOTHING FOLLOWS ***</center></th>
+							</tr>
+				    		<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="13"> </th>
+			    			</tr>
+							<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Prepared by: </th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4">Recommended by: </th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5">Approved by: </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:lighter; color: #000" colspan="13"> </th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedby4"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedby4"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5" id="sapprovedby4"></th>
+			    			</tr>
+			    			<tr>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="spreparedbypos4"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="4" id="srecommendedbypos4"></th>
+			    				<th style="text-align:center; font-weight:bolder; color: #000" colspan="5" id="sapprovedbypos4"></th>
+			    			</tr>
+						</tfoot>
+			    	</table>
+		    	</div>	
+		  	</div>
 	  </div>
 	 <div id="home2" class="tab-pane fade">
-	 		<div class="col-md-12" style="margin-top:10px"><label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label></div>
+	 		<div class="col-md-12" style="margin-top:10px">
+	 			<label><i class="fa fa-info-circle"></i> Reminders: Double click each entry to update/edit.</label>
+	 		</div>
 	    	<div class="col-md-12" style="border:1px solid gray;" id="tbl_damage_assistance">
 		    	<table style="width:100%;">
 		    		<thead>
@@ -1434,14 +1439,10 @@
 		    					</tr>
 		    					<tr>
 		    						<th colspan="2" style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">DAMAGED HOUSES</th>
-		    						<!-- <th colspan="3" style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">CASUALTIES</th> -->
 		    					</tr>
 		    					<tr>
 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">TOTALLY</th>
 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">PARTIALLY</th>
-<!-- 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">DEAD</th>
-		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">INJURED</th>
-		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">MISSING</th> -->
 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">TOTAL</th>
 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">DSWD</th>
 		    						<th style="border:1px solid #000; text-align:center; background-color: #808080; color: #000">LGUs</th>
@@ -1716,14 +1717,14 @@
 	 </div>
 	 <div id="viewchart" class="tab-pane fade">
 	 		
- 		<div class="col-md-12" style="margin-top:20px; width:100%;">
- 			<div class="col-md-12 bg-white" id="dromic_chart" style="height: 600px">
+	 		<div class="col-md-12" style="margin-top:20px; width:100%;">
+	 			<div class="col-md-12 bg-white" id="dromic_chart" style="height: 600px">
+		 		</div>
 	 		</div>
- 		</div>
- 		<div class="col-md-12" style="margin-top:20px; width:100%;">
- 			<div class="col-md-12 bg-white" id="dromic_chart_2" style="height: 600px">
+	 		<div class="col-md-12" style="margin-top:20px; width:100%;">
+	 			<div class="col-md-12 bg-white" id="dromic_chart_2" style="height: 600px">
+		 		</div>
 	 		</div>
- 		</div>
 	 </div>
 	</div>
 
@@ -2511,6 +2512,5 @@
 	    </div>
 	  </div>
 	</div>
-	
 </div>
 	

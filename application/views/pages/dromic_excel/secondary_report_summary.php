@@ -3,7 +3,7 @@
 	<?php
 		include('navigation/dromic_report_tabmenu.php');
 	?>
-	
+
 	<div class="tab-content">
 		<div id="allsummary" class="tab-pane fade in active">
 			<div class="col-md-12" style="border:1px solid gray; " id="tbl_masterquery_summary">
@@ -374,164 +374,168 @@
 		</div>
 		<div id="summary_sex_age_breakdown" class="tab-pane fade" style="color: #000">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #FFF" id="tbl_evacuation_sex_age_summary">
-				<button class="btn btn-default btn-sm" onclick="selectElementContents( document.getElementById('tbl_sex_age_summary'));" title="Copy to clipboard"><span class="fa fa-copy"></span></button>
-		  		<table style="width:100%; font-size: 10px" id="tbl_sex_age_summary">
-		  			<thead>
-		  				<tr>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px;" rowspan="3">PROVINCE/CITY/MUNICIPALITY</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="16">
-		  					SEX AND AGE DISTRIBUTION OF IDPs CURRENTLY INSIDE ECs</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="10">
-		  					SECTORAL DATA OF IDPs CURRENTLY INSIDE ECs</th>
-		  				</tr>	
-		  				<tr>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					INFANT <br/>< 1 y/o (0-11 mos)</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					TODDLERS <br/>1-3 y/o</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					PRESCHOOLERS <br/>2-5 y/o</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					SCHOOL AGE <br/>6-12 y/o</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					TEENAGE <br/>13-19 y/o</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					ADULT <br/>20-59 y/o</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					SENIOR CITIZENS <br/>60 and above</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					TOTAL</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="1">
-		  					PREGNANT WOMEN</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="1">
-		  					LACTATING MOTHER</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					UNACCOMPANIED CHILDREN</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					PWDs</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					SOLO PARENTS</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
-		  					IPs</th>
-		  				</tr>	
-		  				<tr>
-		  					<!-- infant -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- toddlers -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- preschoolers -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- schoolage -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- teenage -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- adult -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- senior -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- total -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+				<button class="btn btn-default btn-sm" 
+					onclick="selectElementContents( document.getElementById('tbl_sex_age_summary'));" 
+					title="Copy to clipboard">
+					<span class="fa fa-copy"></span>
+				</button>
+	  		<table style="width:100%; font-size: 10px" id="tbl_sex_age_summary">
+	  			<thead>
+	  				<tr>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px;" rowspan="3">PROVINCE/CITY/MUNICIPALITY</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="16">
+	  					SEX AND AGE DISTRIBUTION OF IDPs CURRENTLY INSIDE ECs</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="10">
+	  					SECTORAL DATA OF IDPs CURRENTLY INSIDE ECs</th>
+	  				</tr>	
+	  				<tr>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					INFANT <br/>< 1 y/o (0-11 mos)</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					TODDLERS <br/>1-3 y/o</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					PRESCHOOLERS <br/>2-5 y/o</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					SCHOOL AGE <br/>6-12 y/o</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					TEENAGE <br/>13-19 y/o</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					ADULT <br/>20-59 y/o</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					SENIOR CITIZENS <br/>60 and above</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					TOTAL</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="1">
+	  					PREGNANT WOMEN</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="1">
+	  					LACTATING MOTHER</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					UNACCOMPANIED CHILDREN</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					PWDs</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					SOLO PARENTS</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" colspan="2">
+	  					IPs</th>
+	  				</tr>	
+	  				<tr>
+	  					<!-- infant -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- toddlers -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- preschoolers -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- schoolage -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- teenage -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- adult -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- senior -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- total -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
 
-		  					<!-- pregnant -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- lactating -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- unaccompanied -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- pwd -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- solo parent -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  					<!-- ip -->
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
-		  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
-		  				<tr id="sex_age_total_caraga_summary">
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:left; padding:2px">
-		  						<script>document.write(`${REGION}`)</script>
-		  					</th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="infant_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="infant_female_now_c_summary"></th>
+	  					<!-- pregnant -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- lactating -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- unaccompanied -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- pwd -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- solo parent -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  					<!-- ip -->
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">MALE</th>
+	  					<th style="width: 60px; background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px">FEMALE</th>
+	  				</tr>
+	  				<tr id="sex_age_total_caraga_summary">
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:left; padding:2px">
+	  						<script>document.write(`${REGION}`)</script>
+	  					</th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="infant_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="infant_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="toddlers_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="toddlers_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="toddlers_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="toddlers_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="preschoolers_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="preschoolers_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="preschoolers_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="preschoolers_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="schoolage_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="schoolage_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="schoolage_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="schoolage_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="teenage_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="teenage_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="teenage_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="teenage_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="adult_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="adult_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="adult_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="adult_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="senior_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="senior_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="senior_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="senior_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="tot_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="tot_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="tot_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="tot_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="pregnant_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="pregnant_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="lactating_mother_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="lactating_mother_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="unaccompanied_minor_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="unaccompanied_minor_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="unaccompanied_minor_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="unaccompanied_minor_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="pwd_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="pwd_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="pwd_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="pwd_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="solo_parent_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="solo_parent_female_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="solo_parent_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="solo_parent_female_now_c_summary"></th>
 
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="ip_male_now_c_summary"></th>
-		  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
-		  					id="ip_female_now_c_summary"></th>
-
-		  				</tr>
-		  			</thead>
-		  			<tbody>
-		  			</tbody>
-		  		</table>	
-		  	</div>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="ip_male_now_c_summary"></th>
+	  					<th style="background-color: #B6DDE8; color: #000; border:1px solid #000; text-align:center; padding:2px" 
+	  					id="ip_female_now_c_summary"></th>
+	  				</tr>
+	  			</thead>
+	  			<tbody>
+	  			</tbody>
+	  		</table>	
+		  </div>
 		</div>
 	</div>
 </div>

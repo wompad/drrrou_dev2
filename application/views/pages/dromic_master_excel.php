@@ -7,7 +7,7 @@
 <div class="row">
 
 		<?php
-			include('dromic_excel/dromic_top_navigation.php');
+			include('dromic_excel/navigation/dromic_top_navigation.php');
 		?>
 
 		<div style="left:50%; top:45%; position:fixed; z-index:99999; background-color:#304456; padding-top:20px; padding-bottom:20px; padding-left:50px; padding-right:45px; border-radius:5px; color:#fff" id="loader">
@@ -21,7 +21,7 @@
 			<br>
 
 			<?php
-				include('dromic_excel/dromic_secondary_navigation.php');
+				include('dromic_excel/navigation/dromic_secondary_navigation.php');
 			?>
 
 			<?php

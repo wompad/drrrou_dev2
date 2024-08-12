@@ -1,7 +1,9 @@
 <div id="reportsummary" class="tab-pane fade">
+
 	<?php
-		include('dromic_report_tabmenu.php');
+		include('navigation/dromic_report_tabmenu.php');
 	?>
+	
 	<div class="tab-content">
 		<div id="allsummary" class="tab-pane fade in active">
 			<div class="col-md-12" style="border:1px solid gray; " id="tbl_masterquery_summary">

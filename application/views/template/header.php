@@ -397,17 +397,11 @@
                       <?php } ?>
                     </ul>
                   </li>
-                  <!-- <li class="active"><a><i class="fa fa-envelope"></i> My Messages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu" style="display:block">
-                      <li><a href="<?php echo base_url(); ?>send_sms">Send Message</a></li>
-                    </ul>
-                  </li>  -->
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <!-- top navigation -->
         <div class="top_nav">
           <div class="nav_menu" style="background-color:#304456; color:#fff; padding:0px; height:40px; border-left:3px solid #fff">
             <nav>

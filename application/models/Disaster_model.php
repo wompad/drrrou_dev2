@@ -2916,30 +2916,29 @@ class Disaster_model extends CI_Model{
 			$rs_asstdrills = array();
 
 			$query1 = $this->db->query("SELECT
-											dromic_id,
-											MAX (t1. ID) AS ID
-										FROM
-											(
-												SELECT
-													t1.dromic_id,
-													t1. ID
-												FROM
-													tbl_disaster_title t1 --WHERE t1.id::integer > 12
-												LEFT JOIN tbl_dromic t2 ON t1.dromic_id = t2. ID
-												WHERE
-													date_part(
-														'year',
-														t2.disaster_date :: DATE
-													) = date_part('year', CURRENT_DATE)
-												AND t1.dromic_id > 3
-												AND t2.created_by_user = 'jlompad'
-												ORDER BY
-													t1.dromic_id ASC,
-													t1.ddate DESC,
-													t1. ID DESC
-											) t1
-										GROUP BY
-											t1.dromic_id
+																	dromic_id,
+																	MAX (t1. ID) AS ID
+																FROM
+																	(
+																		SELECT
+																			t1.dromic_id,
+																			t1. ID
+																		FROM
+																			tbl_disaster_title t1 --WHERE t1.id::integer > 12
+																		LEFT JOIN tbl_dromic t2 ON t1.dromic_id = t2. ID
+																		WHERE
+																			date_part(
+																				'year',
+																				t2.disaster_date :: DATE
+																			) = date_part('year', CURRENT_DATE)
+																		AND t1.dromic_id > 3
+																		ORDER BY
+																			t1.dromic_id ASC,
+																			t1.ddate DESC,
+																			t1. ID DESC
+																	) t1
+																GROUP BY
+																	t1.dromic_id
 			");
 
 			if($query1){
@@ -2951,25 +2950,25 @@ class Disaster_model extends CI_Model{
 					$id = $data['rs'][$i]['id'];
 
 					$query2 = $this->db->query("SELECT
-													SUM (t1.aff_family) AS aff_family
-												FROM
-													(
-														SELECT
-															SUM (t1.family_cum :: INTEGER) AS aff_family
-														FROM
-															tbl_evacuation_stats t1
-														WHERE
-															t1.disaster_title_id = $id
-														UNION ALL
-															(
-																SELECT
-																	SUM (t1.family_cum :: INTEGER) AS aff_family
-																FROM
-																	tbl_evac_outside_stats t1
-																WHERE
-																	t1.disaster_title_id = $id
-															)
-													) t1
+																			SUM (t1.aff_family) AS aff_family
+																		FROM
+																			(
+																				SELECT
+																					SUM (t1.family_cum :: INTEGER) AS aff_family
+																				FROM
+																					tbl_evacuation_stats t1
+																				WHERE
+																					t1.disaster_title_id = $id
+																				UNION ALL
+																					(
+																						SELECT
+																							SUM (t1.family_cum :: INTEGER) AS aff_family
+																						FROM
+																							tbl_evac_outside_stats t1
+																						WHERE
+																							t1.disaster_title_id = $id
+																					)
+																			) t1
 					");
 
 					$data['num_aff_family'] = $query2->result_array();
@@ -2978,25 +2977,25 @@ class Disaster_model extends CI_Model{
 					}
 
 					$query3 = $this->db->query("SELECT
-												SUM (t1.aff_person) AS aff_person
-											FROM
-												(
-													SELECT
-														SUM (t1.person_cum :: INTEGER) AS aff_person
-													FROM
-														tbl_evacuation_stats t1
-													WHERE
-														t1.disaster_title_id = $id
-													UNION ALL
-														(
-															SELECT
-																SUM (t1.person_cum :: INTEGER) AS aff_person
-															FROM
-																tbl_evac_outside_stats t1
-															WHERE
-																t1.disaster_title_id = $id
-														)
-												) t1
+																			SUM (t1.aff_person) AS aff_person
+																		FROM
+																			(
+																				SELECT
+																					SUM (t1.person_cum :: INTEGER) AS aff_person
+																				FROM
+																					tbl_evacuation_stats t1
+																				WHERE
+																					t1.disaster_title_id = $id
+																				UNION ALL
+																					(
+																						SELECT
+																							SUM (t1.person_cum :: INTEGER) AS aff_person
+																						FROM
+																							tbl_evac_outside_stats t1
+																						WHERE
+																							t1.disaster_title_id = $id
+																					)
+																			) t1
 					");
 
 					$data['num_aff_ind'] = $query3->result_array();
@@ -3005,11 +3004,11 @@ class Disaster_model extends CI_Model{
 					}
 
 					$query4 = $this->db->query("SELECT
-													t1.dswd_asst
-												FROM
-													tbl_casualty_asst t1
-												WHERE
-													t1.disaster_title_id = $id
+																			t1.dswd_asst
+																		FROM
+																			tbl_casualty_asst t1
+																		WHERE
+																			t1.disaster_title_id = $id
 					");
 
 					$data['num_dswd_asst'] = $query4->result_array();
@@ -3018,11 +3017,11 @@ class Disaster_model extends CI_Model{
 					}
 
 					$query6 = $this->db->query("SELECT
-													SUM (t1.family_cum :: INTEGER) AS aff_familyinec
-												FROM
-													tbl_evacuation_stats t1
-												WHERE
-													t1.disaster_title_id = $id
+																			SUM (t1.family_cum :: INTEGER) AS aff_familyinec
+																		FROM
+																			tbl_evacuation_stats t1
+																		WHERE
+																			t1.disaster_title_id = $id
 					");
 
 					$data['aff_familyinec'] = $query6->result_array();
@@ -3031,11 +3030,11 @@ class Disaster_model extends CI_Model{
 					}
 
 					$query7 = $this->db->query("SELECT
-													SUM (t1.family_cum :: INTEGER) AS aff_familyoutec
-												FROM
-													tbl_evac_outside_stats t1
-												WHERE
-													t1.disaster_title_id = $id
+																				SUM (t1.family_cum :: INTEGER) AS aff_familyoutec
+																			FROM
+																				tbl_evac_outside_stats t1
+																			WHERE
+																				t1.disaster_title_id = $id
 					");
 
 					$data['aff_familyoutec'] = $query7->result_array();
@@ -3044,34 +3043,34 @@ class Disaster_model extends CI_Model{
 					}
 
 					$querya = $this->db->query("SELECT
-													SUM (t1.aff_family) AS aff_family,
-													t1.disaster_title
-												FROM
-													(
-														SELECT
-															SUM (t1.family_cum :: INTEGER) AS aff_family,
-															t2.disaster_title
-														FROM
-															tbl_evacuation_stats t1
-														LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-														WHERE t1.disaster_title_id = $id
-														GROUP BY
-															t2.disaster_title
-														UNION ALL
-															(
-																SELECT
-																	SUM (t1.family_cum :: INTEGER) AS aff_family,
-																	t2.disaster_title
-																FROM
-																	tbl_evac_outside_stats t1
-																LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-																WHERE t1.disaster_title_id = $id
-																GROUP BY
-																	t2.disaster_title
-															)
-													) t1
-												GROUP BY
-													t1.disaster_title
+																				SUM (t1.aff_family) AS aff_family,
+																				t1.disaster_title
+																			FROM
+																				(
+																					SELECT
+																						SUM (t1.family_cum :: INTEGER) AS aff_family,
+																						t2.disaster_title
+																					FROM
+																						tbl_evacuation_stats t1
+																					LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																					WHERE t1.disaster_title_id = $id
+																					GROUP BY
+																						t2.disaster_title
+																					UNION ALL
+																						(
+																							SELECT
+																								SUM (t1.family_cum :: INTEGER) AS aff_family,
+																								t2.disaster_title
+																							FROM
+																								tbl_evac_outside_stats t1
+																							LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																							WHERE t1.disaster_title_id = $id
+																							GROUP BY
+																								t2.disaster_title
+																						)
+																				) t1
+																			GROUP BY
+																				t1.disaster_title
 					");
 
 					$r = $querya->result_array();
@@ -3094,44 +3093,44 @@ class Disaster_model extends CI_Model{
 					}
 
 					$queryafffamilydrill = $this->db->query("SELECT
-																SUM(t1.family_cum::numeric) as family_cum,
-																t1.municipality_id,
-																t1.municipality_name,
-																t1.disaster_title
-															FROM
-																(
-																	SELECT
-																		SUM(t1.family_cum::numeric) as family_cum,
-																		t1.municipality_id,
-																		t3.municipality_name,
-																		t2.disaster_title
-																	FROM
-																		tbl_evacuation_stats t1
-																	LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-																	LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3.id
-																	WHERE
-																		t1.disaster_title_id = $id
-																	GROUP BY
-																		t1.municipality_id,t3.municipality_name,t2.disaster_title
-																	UNION ALL
-																		(
-																			SELECT
-																				SUM(t1.family_cum::numeric) as family_cum,
-																				t1.municipality_id,
-																				t3.municipality_name,
-																				t2.disaster_title
-																			FROM
-																				tbl_evac_outside_stats t1
-																			LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-																			LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3.id
-																			WHERE
-																				t1.disaster_title_id = $id
-																			GROUP BY
-																				t1.municipality_id,t3.municipality_name,t2.disaster_title
-																		)
-																) t1
-															GROUP BY
-																t1.municipality_id,t1.municipality_name,t1.disaster_title
+																										SUM(t1.family_cum::numeric) as family_cum,
+																										t1.municipality_id,
+																										t1.municipality_name,
+																										t1.disaster_title
+																									FROM
+																										(
+																											SELECT
+																												SUM(t1.family_cum::numeric) as family_cum,
+																												t1.municipality_id,
+																												t3.municipality_name,
+																												t2.disaster_title
+																											FROM
+																												tbl_evacuation_stats t1
+																											LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																											LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3.id
+																											WHERE
+																												t1.disaster_title_id = $id
+																											GROUP BY
+																												t1.municipality_id,t3.municipality_name,t2.disaster_title
+																											UNION ALL
+																												(
+																													SELECT
+																														SUM(t1.family_cum::numeric) as family_cum,
+																														t1.municipality_id,
+																														t3.municipality_name,
+																														t2.disaster_title
+																													FROM
+																														tbl_evac_outside_stats t1
+																													LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																													LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3.id
+																													WHERE
+																														t1.disaster_title_id = $id
+																													GROUP BY
+																														t1.municipality_id,t3.municipality_name,t2.disaster_title
+																												)
+																										) t1
+																									GROUP BY
+																										t1.municipality_id,t1.municipality_name,t1.disaster_title
 					");
 
 					$rsafffamilydrill = $queryafffamilydrill->result_array();
@@ -3158,22 +3157,22 @@ class Disaster_model extends CI_Model{
 					}
 					
 					$queryasst = $this->db->query("SELECT
-													t1.dswd_asst,
-													t1.disaster_title
-												FROM
-													(
-														SELECT
-															t1.dswd_asst,
-															t2.disaster_title
-														FROM
-															tbl_casualty_asst t1
-														LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-														WHERE
-															t1.disaster_title_id = $id
-														GROUP BY
-															t1.dswd_asst, t2.disaster_title
-													) t1
-												GROUP BY t1.dswd_asst, t1.disaster_title
+																					t1.dswd_asst,
+																					t1.disaster_title
+																				FROM
+																					(
+																						SELECT
+																							t1.dswd_asst,
+																							t2.disaster_title
+																						FROM
+																							tbl_casualty_asst t1
+																						LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																						WHERE
+																							t1.disaster_title_id = $id
+																						GROUP BY
+																							t1.dswd_asst, t2.disaster_title
+																					) t1
+																				GROUP BY t1.dswd_asst, t1.disaster_title
 					");
 
 
@@ -3206,35 +3205,32 @@ class Disaster_model extends CI_Model{
 
 					}
 
-					
-
-
 					$queryasst_lgu = $this->db->query("SELECT
-														t1.dswd_asst,
-														t1.municipality_name,
-														t1.disaster_title
-													FROM
-														(
-															SELECT
-																t1.dswd_asst,
-																t3.municipality_name,
-																t2.disaster_title
-															FROM
-																tbl_casualty_asst t1
-															LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
-															LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3. ID
-															WHERE
-																t1.disaster_title_id = $id
-															GROUP BY
-																t1.dswd_asst,
-																t3.municipality_name,
-																t2.disaster_title
-														) t1
-													WHERE t1.dswd_asst <> ''
-													GROUP BY
-														t1.dswd_asst,
-														t1.municipality_name,
-														t1.disaster_title
+																							t1.dswd_asst,
+																							t1.municipality_name,
+																							t1.disaster_title
+																						FROM
+																							(
+																								SELECT
+																									t1.dswd_asst,
+																									t3.municipality_name,
+																									t2.disaster_title
+																								FROM
+																									tbl_casualty_asst t1
+																								LEFT JOIN tbl_disaster_title t2 ON t1.disaster_title_id = t2. ID
+																								LEFT JOIN tbl_municipality t3 ON t1.municipality_id = t3. ID
+																								WHERE
+																									t1.disaster_title_id = $id
+																								GROUP BY
+																									t1.dswd_asst,
+																									t3.municipality_name,
+																									t2.disaster_title
+																							) t1
+																						WHERE t1.dswd_asst <> ''
+																						GROUP BY
+																							t1.dswd_asst,
+																							t1.municipality_name,
+																							t1.disaster_title
 					");
 
 					$rs_asstdrill = $queryasst_lgu->result_array();
@@ -3260,32 +3256,31 @@ class Disaster_model extends CI_Model{
 
 					}
 
-
 					$query5 = $this->db->query("SELECT
-													COUNT (*) as affbrgy
-												FROM
-													(
-														SELECT DISTINCT
-															ON (t1.municipality_id) t1.municipality_id
-														FROM
-															(
-																SELECT DISTINCT
-																	ON (t1.municipality_id) t1.municipality_id
-																FROM
-																	tbl_evacuation_stats t1
-																WHERE
-																	t1.disaster_title_id = $id
-																UNION ALL
-																	(
-																		SELECT DISTINCT
-																			ON (t2.municipality_id) t2.municipality_id
-																		FROM
-																			tbl_evac_outside_stats t2
-																		WHERE
-																			t2.disaster_title_id = $id
-																	)
-															) t1
-													) t1
+																				COUNT (*) as affbrgy
+																			FROM
+																				(
+																					SELECT DISTINCT
+																						ON (t1.municipality_id) t1.municipality_id
+																					FROM
+																						(
+																							SELECT DISTINCT
+																								ON (t1.municipality_id) t1.municipality_id
+																							FROM
+																								tbl_evacuation_stats t1
+																							WHERE
+																								t1.disaster_title_id = $id
+																							UNION ALL
+																								(
+																									SELECT DISTINCT
+																										ON (t2.municipality_id) t2.municipality_id
+																									FROM
+																										tbl_evac_outside_stats t2
+																									WHERE
+																										t2.disaster_title_id = $id
+																								)
+																						) t1
+																				) t1
 					");
 
 					$data['aff_brgy'] = $query5->result_array();
@@ -3299,16 +3294,16 @@ class Disaster_model extends CI_Model{
 			}
 
 			$datas = array(
-				'aff_family' 			=> $aff_family,
-				'aff_person' 			=> $aff_person,
-				'dswd_asst' 			=> $dswd_asst,
-				'aff_brgy' 				=> $aff_brgy,
-				'aff_familyinec' 		=> $aff_familyinec,
-				'aff_familyoutec' 		=> $aff_familyoutec,
-				'pie_aff_family' 		=> $aff_familys,
-				'pie_dswd_asst' 		=> $asst,
+				'aff_family' 						=> $aff_family,
+				'aff_person' 						=> $aff_person,
+				'dswd_asst' 						=> $dswd_asst,
+				'aff_brgy' 							=> $aff_brgy,
+				'aff_familyinec' 				=> $aff_familyinec,
+				'aff_familyoutec' 			=> $aff_familyoutec,
+				'pie_aff_family' 				=> $aff_familys,
+				'pie_dswd_asst' 				=> $asst,
 				'pie_aff_family_drill' 	=> $queryafffamilydrills,
-				'pie_asst_drill' 		=> $rs_asstdrills
+				'pie_asst_drill' 				=> $rs_asstdrills
 			);
 
 			return $datas;
@@ -4084,114 +4079,158 @@ class Disaster_model extends CI_Model{
 			return $query->result_array();
 		}
 
-		public function saveDamageperBrgy($data){
+		public function checkBrgy_tbl_damage_per_brgy($data){
 
-			$this->db->trans_begin();
+			$count = 0;
 
 			$did = $data['disaster_title_id'];
 			$mid = $data['municipality_id'];
 			$bid = $data['brgy_id'];
 
-			$query1 = $this->db->query("
-				SELECT * FROM tbl_damage_per_brgy t1 WHERE t1.disaster_title_id = '$did' AND t1.municipality_id = '$mid' and t1.brgy_id = '$bid'
+			$query = $this->db->query("
+																SELECT
+																	count(*) count_brgy
+																FROM
+																	tbl_damage_per_brgy t1 
+																WHERE
+																	t1.disaster_title_id = '$did' 
+																	AND t1.municipality_id = '$mid' 
+																	AND t1.brgy_id = '$bid'
 			");
 
-			if($query1->num_rows() < 1){
+			$arr = $query->result_array();
 
-				$this->db->insert("tbl_damage_per_brgy",$data);
+			return $arr[0]['count_brgy'];
 
-				$query2 = $this->db->query("SELECT * FROM tbl_casualty_asst WHERE disaster_title_id = '$did' AND municipality_id = '$mid'");
+		}
 
-				$arx = $query2->result_array();
+		// public function saveDamageperBrgy($data){
+		// 	return $data[1]['brgy_id'];
+		// }
 
-				$query3 = $this->db->query("
-					SELECT * FROM tbl_damage_per_brgy t1 WHERE t1.disaster_title_id = '$did' AND t1.municipality_id = '$mid'
+		public function saveDamageperBrgy($data){
+
+			for($b = 0 ; $b < count($data) ; $b++){
+
+				// $this->db->trans_begin();
+
+				$did = $data[$b]['disaster_title_id'];
+				$mid = $data[$b]['municipality_id'];
+				$bid = $data[$b]['brgy_id'];
+				$pid = $data[$b]['provinceid'];
+
+				$query1 = $this->db->query("
+																	SELECT * FROM tbl_damage_per_brgy t1 WHERE t1.disaster_title_id = '$did' AND t1.municipality_id = '$mid' and t1.brgy_id = '$bid'
 				");
 
-				$query4 = $this->db->query("SELECT * FROM tbl_affected WHERE disaster_title_id = '$did' AND municipality_id = '$mid'");
+				if($query1->num_rows() < 1){
 
-				$arr_affected = $query4->result_array();
+					$data_insert = array(
+						'disaster_title_id' 		=> $data[$b]['disaster_title_id'],
+						'provinceid' 						=> $data[$b]['provinceid'],
+						'municipality_id' 			=> $data[$b]['municipality_id'],
+						'brgy_id' 							=> $data[$b]['brgy_id'],
+						'totally_damaged' 			=> $data[$b]['totally_damaged'],
+						'partially_damaged' 		=> $data[$b]['partially_damaged'],
 
-				$tot 			= 0;
-				$part 			= 0;
-				$dead 			= 0;
-				$injured 		= 0;
-				$missing 		= 0;
-				$costasst_brgy 	= 0;
-				$brgy_id 		= "";
-				$tot_fam 		= 0;
-				$tot_person 	= 0;
-				$count_brgys 	= 0;
+						'tot_aff_fam' 					=> $data[$b]['tot_aff_fam'],
+						'tot_aff_person' 				=> $data[$b]['tot_aff_person'],
 
-				$arr = $query3->result_array();
+						'dead' 									=> '0',
+						'injured' 							=> '0',
+						'missing' 							=> '0',
+						
+						'costasst_brgy' 				=> $data[$b]['costasst_brgy']
+					);
 
-				$count_brgys 	= count($arr);
+					$this->db->insert("tbl_damage_per_brgy",$data_insert);
 
-				for($r = 0 ; $r < count($arr) ; $r++){
+					$query2 = $this->db->query("SELECT * FROM tbl_casualty_asst WHERE disaster_title_id = '$did' AND municipality_id = '$mid'");
 
-					$tot 			= (int)$tot + (int)$arr[$r]['totally_damaged'];
-					$part 			= (int)$part + (int)$arr[$r]['partially_damaged'];
-					$tot_fam 		= (int)$tot_fam + (int)$arr[$r]['tot_aff_fam'];
-					$tot_person 	= (int)$tot_person + (int)$arr[$r]['tot_aff_person'];
-					// $dead 		= (int)$dead + (int)$arr[$r]['dead'];
-					// $injured 	= (int)$injured + (int)$arr[$r]['injured'];
-					// $missing 	= (int)$missing + (int)$arr[$r]['missing'];
+					$arx = $query2->result_array();
 
-					if($r == 0){
-						$brgy_id = $arr[$r]['brgy_id'];
-					}else{
-						$brgy_id = $brgy_id."|".$arr[$r]['brgy_id'];
+					$query3 = $this->db->query("
+						SELECT * FROM tbl_damage_per_brgy t1 WHERE t1.disaster_title_id = '$did' AND t1.municipality_id = '$mid'
+					");
+
+					$query4 = $this->db->query("SELECT * FROM tbl_affected WHERE disaster_title_id = '$did' AND municipality_id = '$mid'");
+
+					$arr_affected = $query4->result_array();
+
+					$tot 						= 0;
+					$part 					= 0;
+					$dead 					= 0;
+					$injured 				= 0;
+					$missing 				= 0;
+					$costasst_brgy 	= 0;
+					$brgy_id 				= "";
+					$tot_fam 				= 0;
+					$tot_person 		= 0;
+					$count_brgys 		= 0;
+
+					$arr = $query3->result_array();
+
+					$count_brgys 	= count($arr);
+
+					for($r = 0 ; $r < count($arr) ; $r++){
+
+						$tot 					= (int)$tot + (int)$arr[$r]['totally_damaged'];
+						$part 				= (int)$part + (int)$arr[$r]['partially_damaged'];
+						$tot_fam 			= (int)$tot_fam + (int)$arr[$r]['tot_aff_fam'];
+						$tot_person 	= (int)$tot_person + (int)$arr[$r]['tot_aff_person'];
+
+						if($r == 0){
+							$brgy_id = $arr[$r]['brgy_id'];
+						}else{
+							$brgy_id = $brgy_id."|".$arr[$r]['brgy_id'];
+						}
+
 					}
 
-				}
+					$data_tot = array(
+						'disaster_title_id' 		=> $did,
+						'municipality_id' 			=> $mid,
+						'provinceid' 						=> $pid,
+						'totally_damaged' 			=> $tot,
+						'partially_damaged' 		=> $part,
+						'brgy_id' 							=> $brgy_id
+					);
 
-				$data_tot = array(
-					'disaster_title_id' 		=> $did,
-					'municipality_id' 			=> $mid,
-					'provinceid' 				=> $data['provinceid'],
-					'totally_damaged' 			=> $tot,
-					'partially_damaged' 		=> $part,
-					// 'dead' 						=> $dead,
-					// 'injured' 					=> $injured,
-					// 'missing' 					=> $missing,
-					'brgy_id' 					=> $brgy_id
-				);
+					$data_tot_affected = array(
+						'provinceid' 				=> $pid,
+						'municipality_id' 	=> $mid,
+						'fam_no' 						=> $tot_fam,
+						'person_no' 	 			=> $tot_person,
+						'brgy_affected' 		=> $count_brgys,
+						'disaster_title_id'	=> $did
+					);
 
-				$data_tot_affected = array(
-					'provinceid' 		=> $data['provinceid'],
-					'municipality_id' 	=> $mid,
-					'fam_no' 			=> $tot_fam,
-					'person_no' 	 	=> $tot_person,
-					'brgy_affected' 	=> $count_brgys,
-					'disaster_title_id'	=> $did
-				);
+					//insert or update tb_casualty_asst
+					if($query2->num_rows() < 1){
+						$this->db->insert('tbl_casualty_asst',$data_tot);
+					}else{
+						$this->db->where('id',$arx[0]['id']);
+						$this->db->update('tbl_casualty_asst',$data_tot);
+					}
+					//insert or update tbl_affected
+					if($query4->num_rows() < 1){
+						$this->db->insert('tbl_affected',$data_tot_affected);
+					}else{
 
-				//insert or update tb_casualty_asst
-				if($query2->num_rows() < 1){
-					$this->db->insert('tbl_casualty_asst',$data_tot);
-				}else{
-					$this->db->where('id',$arx[0]['id']);
-					$this->db->update('tbl_casualty_asst',$data_tot);
-				}
+						$id = $arr_affected[0]['id'];
 
+						$this->db->where('id',$id);
+						$this->db->update('tbl_affected',$data_tot_affected);
+					}
 
-				//insert or update tbl_affected
-				if($query4->num_rows() < 1){
-					$this->db->insert('tbl_affected',$data_tot_affected);
-				}else{
+					// if($this->db->trans_status() == FALSE){
+					// 	$this->db->trans_rollback();
+					// 	return 0;
+					// }else{
+					// 	$this->db->trans_commit();
+					// 	return 1;
+					// }
 
-					$id = $arr_affected[0]['id'];
-
-					$this->db->where('id',$id);
-					$this->db->update('tbl_affected',$data_tot_affected);
-				}
-
-				if($this->db->trans_status() == FALSE){
-					$this->db->trans_rollback();
-					return 0;
-				}else{
-					$this->db->trans_commit();
-					return 1;
 				}
 
 			}
@@ -4199,9 +4238,6 @@ class Disaster_model extends CI_Model{
 		}
 
 		public function get_damage_per_brgy_details($id){
-
-			// $query = $this->db->where('id',$id);
-			// $query = $this->db->get('tbl_damage_per_brgy');
 
 			$query = $this->db->query("SELECT
 											t1.*, t2.province_name, t3.municipality_name, t4.brgy_name

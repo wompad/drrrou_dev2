@@ -794,27 +794,39 @@
 
 		}
 
-		public function saveDamageperBrgy(){
+		public function checkBrgy_tbl_damage_per_brgy(){
 
 			$data = array(
 				'disaster_title_id' 		=> $_GET['disaster_title_id'],
-				'provinceid' 				=> $_GET['provinceid'],
 				'municipality_id' 			=> $_GET['municipality_id'],
-				'brgy_id' 					=> $_GET['brgy_id'],
-				'totally_damaged' 			=> $_GET['totally_damaged'],
-				'partially_damaged' 		=> $_GET['partially_damaged'],
-
-				'tot_aff_fam' 				=> $_GET['tot_aff_fam'],
-				'tot_aff_person' 			=> $_GET['tot_aff_person'],
-
-				'dead' 						=> $_GET['dead'],
-				'injured' 					=> $_GET['injured'],
-
-				'missing' 					=> $_GET['missing'],
-				'costasst_brgy' 			=> $_GET['costasst_brgy']
+				'brgy_id' 					=> $_GET['brgy_id']
 			);
 
-			echo json_encode($data['result'][] = $this->Disaster_model->saveDamageperBrgy($data),JSON_NUMERIC_CHECK);
+			echo json_encode($data['result'][] = $this->Disaster_model->checkBrgy_tbl_damage_per_brgy($data),JSON_NUMERIC_CHECK);
+
+		}
+
+		public function saveDamageperBrgy(){
+
+			// $data = array(
+			// 	'disaster_title_id' 		=> $_GET['disaster_title_id'],
+			// 	'provinceid' 				=> $_GET['provinceid'],
+			// 	'municipality_id' 			=> $_GET['municipality_id'],
+			// 	'brgy_id' 					=> $_GET['brgy_id'],
+			// 	'totally_damaged' 			=> $_GET['totally_damaged'],
+			// 	'partially_damaged' 		=> $_GET['partially_damaged'],
+
+			// 	'tot_aff_fam' 				=> $_GET['tot_aff_fam'],
+			// 	'tot_aff_person' 			=> $_GET['tot_aff_person'],
+
+			// 	'dead' 						=> '0',
+			// 	'injured' 					=> '0',
+			// 	'missing' 					=> '0',
+				
+			// 	'costasst_brgy' 			=> $_GET['costasst_brgy']
+			// );
+
+			echo json_encode($data['result'][] = $this->Disaster_model->saveDamageperBrgy($_GET['data_dam_per_brgy_arr']),JSON_NUMERIC_CHECK);
 
 		}
 

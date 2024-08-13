@@ -352,38 +352,39 @@
                   <li class="active"><a><i class="fa fa-table"></i> Operation Center<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
                       <?php if($_SESSION['can_create_report'] == 't'){ ?> <li><a href="<?php echo base_url(); ?>dromic_new">Add New | View DROMIC Report</a></li> <?php } ?>
-                      <li><a href="<?php echo base_url(); ?>eopcen">Virtual OpCen <span class="badge" style="background-color:#D9534F" id="counteopcen"> </span> </a></li>
+                      <!-- <li><a href="<?php echo base_url(); ?>eopcen">Virtual OpCen <span class="badge" style="background-color:#D9534F" id="counteopcen"> </span> </a></li> -->
                       <li><a href="<?php echo base_url(); ?>inbox2">Messages (Inbox) </a></li>
                       <li><a href="<?php echo base_url(); ?>weatherimage">Latest Weather Forecast</a></li>
                       <li><a href="<?php echo base_url(); ?>weatherradar">Weather Radar Image</a></li>
                       <li><a href="<?php echo base_url(); ?>earthquake">Earthquake Bulletin</a></li>
                     </ul>
                   </li>
-                  <li class="active"><a><i class="fa fa-phone"></i> My Contact List <span class="fa fa-chevron-down"></span></a>
+                  <!-- <li class="active">
+                    <a><i class="fa fa-phone"></i> My Contact List <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
                       <li><a href="<?php echo base_url(); ?>home">C/MSWDO Contacts</a></li>
                       <li><a href="<?php echo base_url(); ?>cmatleaders">CMAT/PAT Contacts</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                   <?php 
                       if($_SESSION['isadmin'] == "t"){?>
-                  <li class="active"><a><i class="fa fa-map-o"></i> Web Map Application <span class="fa fa-chevron-down"></span></a>
+                  <!-- <li class="active"><a><i class="fa fa-map-o"></i> Web Map Application <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
                       <li><a href="<?php echo base_url(); ?>webmap">View Map</a></li>
                     </ul>
-                  </li>
-                  <li class='active'><a><i class='fa fa-th'></i> Reports <span class='fa fa-chevron-down'></span></a>
+                  </li> -->
+                  <!-- <li class='active'><a><i class='fa fa-th'></i> Reports <span class='fa fa-chevron-down'></span></a>
                     <ul class='nav child_menu' style='display:block'>
                       <li><a href='<?php echo base_url(); ?>addreliefassistance'>Add Relief Assistance</a></li>
                       <li><a href='<?php echo base_url(); ?>reliefassistance'>Augmentation Assistance Report</a></li>
                       <li><a href='<?php echo base_url(); ?>congressional'>Congressional Report</a></li>
                     </ul>
-                  </li>
-                  <li class='active'><a><i class='fa fa-users'></i> User Management <span class='fa fa-chevron-down'></span></a>
+                  </li> -->
+                  <!-- <li class='active'><a><i class='fa fa-users'></i> User Management <span class='fa fa-chevron-down'></span></a>
                     <ul class='nav child_menu' style='display:block'>
                       <li><a href='<?php echo base_url(); ?>qrt_teams'>QRT Teams</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                   <?php } } ?>
                   <li class='active'><a><i class='fa fa-users'></i> Tools <span class='fa fa-chevron-down'></span></a>
                     <ul class='nav child_menu' style='display:block'>

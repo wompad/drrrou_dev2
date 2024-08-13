@@ -11526,10 +11526,11 @@ if(bub_count_issues.length){
 
 // }
 
+
+//reset selection of barangay when changing the selected value of city_dam_per_brgy
 $('#city_dam_per_brgy').change(function(){
 
 	var uriID = URLID();
-
 	var cid = $('#city_dam_per_brgy').val();
 
 	var datas = {
@@ -11551,8 +11552,11 @@ $('#city_dam_per_brgy').change(function(){
 
 	});
 
-})
 
+	//reset data_dam_per_brgy_arr when changing city/municipality 
+	data_dam_per_brgy_arr = [];
+	populateDataDamagePerBrgy(data_dam_per_brgy_arr);
+})
 
 $('#close_edit_modal').click(function(){
 
@@ -11577,69 +11581,159 @@ $('#close_edit_modal').click(function(){
 
 })
 
-$('#savedata_dam_per_brgy').click(function(){
+//Allow multiple saving of affected barangays
+let data_dam_per_brgy_arr = [];
 
-	// $('#province_dam_per_brgy').val();
-	// $('#city_dam_per_brgy').val();
-	// $('#brgy_dam_per_brgy').val();
-	// $('#damperbrgy_totally').val();
-	// $('#damperbrgy_partially').val();
-	// $('#damperbrgy_dead').val();
-	// $('#damperbrgy_injured').val();
-	// $('#damperbrgy_missing').val();
+function savedata_dam_per_brgyQ(){
 
 	var uriID = URLID();
 
-	var datas = {
+	if($('#province_dam_per_brgy').val() == "" || $('#city_dam_per_brgy').val() == "" || $('#brgy_dam_per_brgy').val() == ""){
+		msgbox("Kindly select province, city/municipality and barangay to continue!");
+	}
+	else{
+		if($('#damperbrgy_tot_aff_fam').val() == "" || $('#damperbrgy_tot_aff_person').val() == ""){
+			msgbox("Please provide number of affected families and persons");
+		}else{
+			if(Number($('#damperbrgy_tot_aff_person').val()) < Number($('#damperbrgy_tot_aff_fam').val())){
+				msgbox("Number of affected families must be lower than the affected persons");
+			}else{
+				let tot_damaged = Number($('#damperbrgy_totally').val()) + Number($('#damperbrgy_partially').val())
+				if(Number(tot_damaged) > Number($('#damperbrgy_tot_aff_fam').val())){
+					msgbox("Number of totally and partially damaged houses must not be greater than the total affeted families");
+				}else{
 
-		disaster_title_id 			: uriID,
-		provinceid 					: $('#province_dam_per_brgy').val(), 
-		municipality_id 	 		: $('#city_dam_per_brgy').val(), 		
-		brgy_id 					: $('#brgy_dam_per_brgy').val(), 
+					checkBrgyinDatabase(uriID, $('#city_dam_per_brgy').val(), $('#brgy_dam_per_brgy').val()).then(function(count){
+						
+						if(count > 0){
+							msgbox(`Barangay ${$('#brgy_dam_per_brgy option:selected').text()} already exist in the database`);
 
-		totally_damaged 			: $('#damperbrgy_totally').val(), 
+							$('#brgy_dam_per_brgy').val("");
+							$('#damperbrgy_totally').val("");
+							$('#damperbrgy_partially').val("");
+							$('#damperbrgy_tot_aff_fam').val("");
+							$('#damperbrgy_tot_aff_person').val("");
+							$('#damperbrgy_tot_aff_person').val("");
+
+						}else{
+							if(data_dam_per_brgy_arr.length < 1){
+
+								populateArrDataDamPerBrgy();
+
+								populateDataDamagePerBrgy(data_dam_per_brgy_arr);
+
+								$('#brgy_dam_per_brgy').val("");
+								$('#damperbrgy_totally').val("");
+								$('#damperbrgy_partially').val("");
+								$('#damperbrgy_tot_aff_fam').val("");
+								$('#damperbrgy_tot_aff_person').val("");
+								$('#damperbrgy_tot_aff_person').val("");
+
+							}else{
+
+								let count = 0;
+
+								for(i = 0 ; i < data_dam_per_brgy_arr.length ; i++){
+									if(Number($('#brgy_dam_per_brgy').val()) === Number(data_dam_per_brgy_arr[i]['brgy_id'])){
+										count += 1;
+									}
+								}
+
+								if(count > 0){
+									msgbox("Barangay already exists in the list!");
+								}else{
+									populateArrDataDamPerBrgy();
+								}
+								populateDataDamagePerBrgy(data_dam_per_brgy_arr);
+								$('#brgy_dam_per_brgy').val("");
+								$('#damperbrgy_totally').val("");
+								$('#damperbrgy_partially').val("");
+								$('#damperbrgy_tot_aff_fam').val("");
+								$('#damperbrgy_tot_aff_person').val("");
+								$('#damperbrgy_tot_aff_person').val("");
+							}
+						}
+					})
+				}
+			}
+		}
+	}
+}
+
+function populateArrDataDamPerBrgy(){
+
+	var uriID = URLID();
+
+	data_dam_per_brgy_arr.push({
+		disaster_title_id  			: uriID,
+		provinceid 							: $('#province_dam_per_brgy').val(), 
+		municipality_id 	 			: $('#city_dam_per_brgy').val(), 		
+		brgy_id 								: $('#brgy_dam_per_brgy').val(), 
+
+		totally_damaged 				: $('#damperbrgy_totally').val(), 
 		partially_damaged 			: $('#damperbrgy_partially').val(),
 
-		tot_aff_fam 				: $('#damperbrgy_tot_aff_fam').val(), 
-		tot_aff_person 				: $('#damperbrgy_tot_aff_person').val(), 
+		tot_aff_fam 						: $('#damperbrgy_tot_aff_fam').val(), 
+		tot_aff_person 					: $('#damperbrgy_tot_aff_person').val(), 
 
-		dead 						: $('#damperbrgy_dead').val(), 
-		injured 					: $('#damperbrgy_injured').val(), 
-		missing 					: $('#damperbrgy_missing').val(),
-		costasst_brgy 				: $('#costasst_brgy').val() 
+		dead 										: '0', 
+		injured 								: '0', 
+		missing 								: '0',
 
+		costasst_brgy 					: $('#costasst_brgy').val(),
+
+		province_name 					: $('#province_dam_per_brgy option:selected').text(),
+		municipality_name	 			: $('#city_dam_per_brgy option:selected').text(),		
+		brgy_name								: $('#brgy_dam_per_brgy option:selected').text()
+	})
+
+}
+
+function checkBrgyinDatabase(disaster_title_id, municipality_id, brgy_id){
+
+	let count = 0;
+
+	let datas = {
+		disaster_title_id : disaster_title_id,
+		municipality_id 	: municipality_id,
+		brgy_id 					: brgy_id
 	};
 
-	$.getJSON(serverip+"saveDamageperBrgy",datas,function(a){
-		if(a == 1){
-			$('#province_dam_per_brgy').val('');
-			$('#damperbrgy_totally').val('');
-			$('#damperbrgy_partially').val('');
+  return $.getJSON(serverip + "checkBrgy_tbl_damage_per_brgy", datas)
+    .then(function(count) {
+        return count;
+    })
 
-			$('#damperbrgy_tot_aff_fam').val('');
-			$('#damperbrgy_tot_aff_person').val('');
+}	
 
-			$('#damperbrgy_dead').val('');
-			$('#damperbrgy_injured').val('');
-			$('#damperbrgy_missing').val('');
-			$('#city_dam_per_brgy').val('');
-			$('#brgy_dam_per_brgy').val('');
 
-			$('#costasst_brgy').val('');
+$('#savedata_dam_per_brgy').click(function(){
 
-			alerts();
-			get_dromic(uriID);
+	var uriID = URLID();
 
-			$('#savedata_dam_per_brgy').show();
-			$('#updatedata_dam_per_brgy').hide();
-			$('#deldata_dam_per_brgy').hide();
+	if(data_dam_per_brgy_arr.length < 1){
+		msgbox(`Kindly provide data to continue`);
+	}else{
 
-		}else{
-
-			msgbox("Ooops!!! Something went wrong while saving your data. Municipality or Barangay may already exist!")
-
+		let data = {
+			data_dam_per_brgy_arr
 		}
-	});
+
+		let result = $.getJSON(serverip+"saveDamageperBrgy",data);
+
+		result.then(function(response){
+
+					data_dam_per_brgy_arr = [];
+					populateDataDamagePerBrgy(data_dam_per_brgy_arr);
+					alerts();
+					get_dromic(uriID);
+
+					$('#savedata_dam_per_brgy').show();
+					$('#updatedata_dam_per_brgy').hide();
+					$('#deldata_dam_per_brgy').hide();
+
+		})
+	}
 
 })
 
@@ -11710,10 +11804,10 @@ $('#addasst').click(function(){
 
 	asst_list.push({
 		assistance_sub_gen 		 	: ass,
-		assistance_name 			: $('#chooseasst option:selected').text(),
-		cost 						: $('#acost').val(),
-		quantity 					: $('#quantity').val(),
-		date_aug 					: todate2($('#single_cal1').val())
+		assistance_name 				: $('#chooseasst option:selected').text(),
+		cost 										: $('#acost').val(),
+		quantity 								: $('#quantity').val(),
+		date_aug 								: todate2($('#single_cal1').val())
 	})
 
 	asst_list_item();
@@ -11760,13 +11854,13 @@ $('#saveasst_spec').click(function(){
 
 	var datas = {
 		details :{
-			provinceid  			: $('#province').val(),
-			municipality_id 		: $('#city').val(),
-			number_served 			: $('#augnumberserved').val(),
-			amount 					: tot,
-			assistance_type_code 	: $('#assistancetype').val(),
-			remarks_particulars 	: $('#remarks_particulars').val(),
-			disaster_event 			: $('#disasterevent').val()
+			provinceid  						: $('#province').val(),
+			municipality_id 				: $('#city').val(),
+			number_served 					: $('#augnumberserved').val(),
+			amount 									: tot,
+			assistance_type_code 		: $('#assistancetype').val(),
+			remarks_particulars 		: $('#remarks_particulars').val(),
+			disaster_event 					: $('#disasterevent').val()
 		},
 		asst_list
 	}

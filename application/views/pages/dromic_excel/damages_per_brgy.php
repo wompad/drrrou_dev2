@@ -62,7 +62,7 @@
 								placeholder="Partially Damaged" class="form-control" min="0" id="damperbrgy_partially">
 							</td>
 							<td style="text-align: center">
-								<button class="btn btn-danger btn-sm" onclick="savedata_dam_per_brgyQ();">
+								<button class="btn btn-danger btn-sm" onclick="savedata_dam_per_brgyQ();" id="saveBrgytoArray">
 									<span class="fa fa-plus-circle"></span>
 								</button>
 							</td>

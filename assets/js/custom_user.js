@@ -1568,12 +1568,9 @@ function get_narrative_report(){
 }
 
 function get_dromic(n){
-
 	var datum = {
-
 		username 	: $('#usernameid').text(),
 		id 			: n
-
 	}
 
 
@@ -1608,10 +1605,6 @@ function get_dromic(n){
 			    	}
 			    }
 			});
-
-
-
-			
 
 		}else{
 
@@ -5383,76 +5376,93 @@ var damage_per_brgy_id = 0;
 
 function updatedeldamageperbrgy(id){
 
-	$('#editDamageModal').modal({backdrop: 'static', keyboard: false}, 'show');
-
-	console.log(1);
-
 	var datas = {
 		id : id
 	}
 
-	$('#savedata_dam_per_brgy').hide();
-	$('#updatedata_dam_per_brgy').show();
-	$('#deldata_dam_per_brgy').show();
+	if($('#can_edit').text() == 'f'){
+		msgbox("You're not allowed to edit this entry. Kindly contact the administrator for this privilege.");
+		$('#savedata_dam_per_brgy').hide();
+		$('#saveBrgytoArray').hide();
+		$('#updatedata_dam_per_brgyv2').hide();
+		$('#deldata_dam_per_brgyv2').hide();
+	}else{
 
-	damage_per_brgy_id = id;
+		$('#editDamageModal').modal({backdrop: 'static', keyboard: false}, 'show');
 
-	$.getJSON(serverip+"get_damage_per_brgy_details",datas,function(a){
+		$('#savedata_dam_per_brgy').show();
+		$('#saveBrgytoArray').show();
+		$('#updatedata_dam_per_brgyv2').show();
+		$('#deldata_dam_per_brgyv2').show();
 
-		for(var i in a['details']){
+		damage_per_brgy_id = id;
+		$.getJSON(serverip+"get_damage_per_brgy_details",datas,function(a){
+				for(var i in a['details']){
 
-			$('#details_province').text(a['details'][i].province_name)
-			$('#details_muni').text(a['details'][i].municipality_name)
-			$('#details_brgy').text(a['details'][i].brgy_name)
+					$('#details_province').text(a['details'][i].province_name)
+					$('#details_muni').text(a['details'][i].municipality_name)
+					$('#details_brgy').text(a['details'][i].brgy_name)
 
-			$('#province_dam_per_brgy').val(a['details'][i].provinceid);
-			$('#damperbrgy_totally').val(a['details'][i].totally_damaged);
-			$('#damperbrgy_partially').val(a['details'][i].partially_damaged);
+					$('#province_dam_per_brgy').val(a['details'][i].provinceid);
+					$('#damperbrgy_totally').val(a['details'][i].totally_damaged);
+					$('#damperbrgy_partially').val(a['details'][i].partially_damaged);
 
-			$('#damperbrgy_tot_aff_fam').val(a['details'][i].tot_aff_fam);
-			$('#damperbrgy_tot_aff_person').val(a['details'][i].tot_aff_person);
+					$('#damperbrgy_tot_aff_fam').val(a['details'][i].tot_aff_fam);
+					$('#damperbrgy_tot_aff_person').val(a['details'][i].tot_aff_person);
 
-			$('#damperbrgy_totallyv2').val(a['details'][i].totally_damaged);
-			$('#damperbrgy_partiallyv2').val(a['details'][i].partially_damaged);
+					$('#damperbrgy_totallyv2').val(a['details'][i].totally_damaged);
+					$('#damperbrgy_partiallyv2').val(a['details'][i].partially_damaged);
 
-			$('#damperbrgy_tot_aff_famv2').val(a['details'][i].tot_aff_fam);
-			$('#damperbrgy_tot_aff_personv2').val(a['details'][i].tot_aff_person);
+					$('#damperbrgy_tot_aff_famv2').val(a['details'][i].tot_aff_fam);
+					$('#damperbrgy_tot_aff_personv2').val(a['details'][i].tot_aff_person);
 
-			$('#costasst_brgyv2').val(a['details'][i].costasst_brgy)
-			$('#costasst_brgy').val(a['details'][i].costasst_brgy)
+					$('#costasst_brgyv2').val(a['details'][i].costasst_brgy)
+					$('#costasst_brgy').val(a['details'][i].costasst_brgy)
+				}
+
+				$('#city_dam_per_brgy').empty().append(
+					"<option value=''>-- Select City/Municipality --</option>"
+				);
+
+				for(var k in a['municipality']){
+					$('#city_dam_per_brgy').append(
+						"<option value='"+a['municipality'][k].id+"'>"+a['municipality'][k].municipality_name+"</option>"
+					);
+				}
+
+				$('#city_dam_per_brgy').val(a['details'][i].municipality_id);
+
+				$('#brgy_dam_per_brgy').empty().append(
+					"<option value=''>-- Select Barangay -</option>"
+				);
+
+				for(var k in a['barangay']){
+					$('#brgy_dam_per_brgy').append(
+						"<option value='"+a['barangay'][k].id+"'>"+a['barangay'][k].brgy_name+"</option>"
+					);
+				}
+				$('#brgy_dam_per_brgy').val(a['details'][i].brgy_id);
+			});
 		}
 
-		$('#city_dam_per_brgy').empty().append(
-			"<option value=''>-- Select City/Municipality --</option>"
-		);
-
-		for(var k in a['municipality']){
-			$('#city_dam_per_brgy').append(
-				"<option value='"+a['municipality'][k].id+"'>"+a['municipality'][k].municipality_name+"</option>"
-			);
-		}
-
-		$('#city_dam_per_brgy').val(a['details'][i].municipality_id);
-
-		$('#brgy_dam_per_brgy').empty().append(
-			"<option value=''>-- Select Barangay -</option>"
-		);
-
-		for(var k in a['barangay']){
-			$('#brgy_dam_per_brgy').append(
-				"<option value='"+a['barangay'][k].id+"'>"+a['barangay'][k].brgy_name+"</option>"
-			);
-		}
-
-		$('#brgy_dam_per_brgy').val(a['details'][i].brgy_id);
-
-	});
-
+		$('#updatedata_dam_per_brgy').hide();
+		$('#deldata_dam_per_brgy').hide();
 }
 
 $('#toexcel7').click(function(){
 
-	$('#savedata_dam_per_brgy').show();
+	if($('#can_edit').text() == 'f'){
+		$('#savedata_dam_per_brgy').hide();
+		$('#saveBrgytoArray').hide();
+		$('#updatedata_dam_per_brgyv2').hide();
+		$('#deldata_dam_per_brgyv2').hide();
+	}else{
+		$('#savedata_dam_per_brgy').show();
+		$('#saveBrgytoArray').show();
+		$('#updatedata_dam_per_brgyv2').show();
+		$('#deldata_dam_per_brgyv2').show();
+	}
+
 	$('#updatedata_dam_per_brgy').hide();
 	$('#deldata_dam_per_brgy').hide();
 
@@ -11558,7 +11568,24 @@ $('#city_dam_per_brgy').change(function(){
 
 $('#close_edit_modal').click(function(){
 
-	$('#savedata_dam_per_brgy').show();
+	var datum = {
+		username 	: $('#usernameid').text(),
+		id 				: URLID()
+	}
+
+	$.getJSON(serverip+"get_can_edit",datum,function(a){
+		if(a == 0){
+			$('#savedata_dam_per_brgy').hide();
+			$('#saveBrgytoArray').hide();
+			$('#updatedata_dam_per_brgyv2').hide();
+			$('#deldata_dam_per_brgyv2').hide();
+		}else{
+			$('#savedata_dam_per_brgy').show();
+			$('#saveBrgytoArray').show();
+			$('#updatedata_dam_per_brgyv2').show();
+			$('#deldata_dam_per_brgyv2').show();
+		}
+	})
 	$('#updatedata_dam_per_brgy').hide();
 	$('#deldata_dam_per_brgy').hide();
 
@@ -14553,77 +14580,82 @@ $('#addsexage').click(function(){
 
 var updateSexAgeData = (data) => {
 
-	var data = {
-		id : data
-	}
+	if($('#can_edit').text() == 'f'){
+		msgbox("You're not allowed to edit this entry. Kindly contact the administrator for this privilege.");
+	}else{
 
-	$('#addSexAgeDataModal').modal('show');
-	$('#deleteSexAgeDate').show();
+		var data = {
+			id : data
+		}
 
-	$.getJSON(serverip+"searchSexAgeData",data,function(a){
+		$('#addSexAgeDataModal').modal('show');
+		$('#deleteSexAgeDate').show();
 
-		$('#provinceSexAge').val(a[0].province_id);
+		$.getJSON(serverip+"searchSexAgeData",data,function(a){
 
-		$.getJSON(serverip+"get_municipality",function(city){  
-		    for(var i in city){
-		    	if(a[0].province_id == city[i].provinceid){
-		    		$('#citySexAge').append(
-				        "<option value='"+city[i].id+"'>"+city[i].municipality_name+"</option>"
-				    )
-		    	}
-		    }
-		    $('#citySexAge').val(a[0].municipality_id);
+			$('#provinceSexAge').val(a[0].province_id);
+
+			$.getJSON(serverip+"get_municipality",function(city){  
+			    for(var i in city){
+			    	if(a[0].province_id == city[i].provinceid){
+			    		$('#citySexAge').append(
+					        "<option value='"+city[i].id+"'>"+city[i].municipality_name+"</option>"
+					    )
+			    	}
+			    }
+			    $('#citySexAge').val(a[0].municipality_id);
+			});
+
+			$('#infant_male_cum').val(a[0].infant_male_cum);
+			$('#infant_male_now').val(a[0].infant_male_now);
+			$('#infant_female_cum').val(a[0].infant_female_cum);
+			$('#infant_female_now').val(a[0].infant_female_now);
+			$('#toddlers_male_cum').val(a[0].toddlers_male_cum);
+			$('#toddlers_male_now').val(a[0].toddlers_male_now);
+			$('#toddlers_female_cum').val(a[0].toddlers_female_cum);
+			$('#toddlers_female_now').val(a[0].toddlers_female_now);
+			$('#preschoolers_male_cum').val(a[0].preschoolers_male_cum);
+			$('#preschoolers_male_now').val(a[0].preschoolers_male_now);
+			$('#preschoolers_female_cum').val(a[0].preschoolers_female_cum);
+			$('#preschoolers_female_now').val(a[0].preschoolers_female_now);
+			$('#schoolage_male_cum').val(a[0].schoolage_male_cum);
+			$('#schoolage_male_now').val(a[0].schoolage_male_now);
+			$('#schoolage_female_cum').val(a[0].schoolage_female_cum);
+			$('#schoolage_female_now').val(a[0].schoolage_female_now);
+			$('#teenage_male_cum').val(a[0].teenage_male_cum);
+			$('#teenage_male_now').val(a[0].teenage_male_now);
+			$('#teenage_female_cum').val(a[0].teenage_female_cum);
+			$('#teenage_female_now').val(a[0].teenage_female_now);
+			$('#adult_male_cum').val(a[0].adult_male_cum);
+			$('#adult_male_now').val(a[0].adult_male_now);
+			$('#adult_female_cum').val(a[0].adult_female_cum);
+			$('#adult_female_now').val(a[0].adult_female_now);
+			$('#senior_male_cum').val(a[0].senior_male_cum);
+			$('#senior_male_now').val(a[0].senior_male_now);
+			$('#senior_female_cum').val(a[0].senior_female_cum);
+			$('#senior_female_now').val(a[0].senior_female_now);
+			$('#pregnant_cum').val(a[0].pregnant_cum);
+			$('#pregnant_now').val(a[0].pregnant_now);
+			$('#lactating_mother_cum').val(a[0].lactating_mother_cum);
+			$('#lactating_mother_now').val(a[0].lactating_mother_now);
+			$('#unaccompanied_minor_male_cum').val(a[0].unaccompanied_minor_male_cum);
+			$('#unaccompanied_minor_male_now').val(a[0].unaccompanied_minor_male_now);
+			$('#unaccompanied_minor_female_cum').val(a[0].unaccompanied_minor_female_cum);
+			$('#unaccompanied_minor_female_now').val(a[0].unaccompanied_minor_female_now);
+			$('#pwd_male_cum').val(a[0].pwd_male_cum);
+			$('#pwd_male_now').val(a[0].pwd_male_now);
+			$('#pwd_female_cum').val(a[0].pwd_female_cum);
+			$('#pwd_female_now').val(a[0].pwd_female_now);
+			$('#solo_parent_male_cum').val(a[0].solo_parent_male_cum);
+			$('#solo_parent_male_now').val(a[0].solo_parent_male_now);
+			$('#solo_parent_female_cum').val(a[0].solo_parent_female_cum);
+			$('#solo_parent_female_now').val(a[0].solo_parent_female_now);
+			$('#ip_male_cum').val(a[0].ip_male_cum);
+			$('#ip_male_now').val(a[0].ip_male_now);
+			$('#ip_female_cum').val(a[0].ip_female_cum);
+			$('#ip_female_now').val(a[0].ip_female_now);
 		});
-
-		$('#infant_male_cum').val(a[0].infant_male_cum);
-		$('#infant_male_now').val(a[0].infant_male_now);
-		$('#infant_female_cum').val(a[0].infant_female_cum);
-		$('#infant_female_now').val(a[0].infant_female_now);
-		$('#toddlers_male_cum').val(a[0].toddlers_male_cum);
-		$('#toddlers_male_now').val(a[0].toddlers_male_now);
-		$('#toddlers_female_cum').val(a[0].toddlers_female_cum);
-		$('#toddlers_female_now').val(a[0].toddlers_female_now);
-		$('#preschoolers_male_cum').val(a[0].preschoolers_male_cum);
-		$('#preschoolers_male_now').val(a[0].preschoolers_male_now);
-		$('#preschoolers_female_cum').val(a[0].preschoolers_female_cum);
-		$('#preschoolers_female_now').val(a[0].preschoolers_female_now);
-		$('#schoolage_male_cum').val(a[0].schoolage_male_cum);
-		$('#schoolage_male_now').val(a[0].schoolage_male_now);
-		$('#schoolage_female_cum').val(a[0].schoolage_female_cum);
-		$('#schoolage_female_now').val(a[0].schoolage_female_now);
-		$('#teenage_male_cum').val(a[0].teenage_male_cum);
-		$('#teenage_male_now').val(a[0].teenage_male_now);
-		$('#teenage_female_cum').val(a[0].teenage_female_cum);
-		$('#teenage_female_now').val(a[0].teenage_female_now);
-		$('#adult_male_cum').val(a[0].adult_male_cum);
-		$('#adult_male_now').val(a[0].adult_male_now);
-		$('#adult_female_cum').val(a[0].adult_female_cum);
-		$('#adult_female_now').val(a[0].adult_female_now);
-		$('#senior_male_cum').val(a[0].senior_male_cum);
-		$('#senior_male_now').val(a[0].senior_male_now);
-		$('#senior_female_cum').val(a[0].senior_female_cum);
-		$('#senior_female_now').val(a[0].senior_female_now);
-		$('#pregnant_cum').val(a[0].pregnant_cum);
-		$('#pregnant_now').val(a[0].pregnant_now);
-		$('#lactating_mother_cum').val(a[0].lactating_mother_cum);
-		$('#lactating_mother_now').val(a[0].lactating_mother_now);
-		$('#unaccompanied_minor_male_cum').val(a[0].unaccompanied_minor_male_cum);
-		$('#unaccompanied_minor_male_now').val(a[0].unaccompanied_minor_male_now);
-		$('#unaccompanied_minor_female_cum').val(a[0].unaccompanied_minor_female_cum);
-		$('#unaccompanied_minor_female_now').val(a[0].unaccompanied_minor_female_now);
-		$('#pwd_male_cum').val(a[0].pwd_male_cum);
-		$('#pwd_male_now').val(a[0].pwd_male_now);
-		$('#pwd_female_cum').val(a[0].pwd_female_cum);
-		$('#pwd_female_now').val(a[0].pwd_female_now);
-		$('#solo_parent_male_cum').val(a[0].solo_parent_male_cum);
-		$('#solo_parent_male_now').val(a[0].solo_parent_male_now);
-		$('#solo_parent_female_cum').val(a[0].solo_parent_female_cum);
-		$('#solo_parent_female_now').val(a[0].solo_parent_female_now);
-		$('#ip_male_cum').val(a[0].ip_male_cum);
-		$('#ip_male_now').val(a[0].ip_male_now);
-		$('#ip_female_cum').val(a[0].ip_female_cum);
-		$('#ip_female_now').val(a[0].ip_female_now);
-	});
+	}
 }
 
 $('#deleteSexAgeDate').click(function(){

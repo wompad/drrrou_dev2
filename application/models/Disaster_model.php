@@ -5584,19 +5584,19 @@ class Disaster_model extends CI_Model{
 			$password 	= sha1(md5($password));
 
 			$datas = array(
-				'firstname' 		=> $data['firstname'],
-				'middlename' 		=> $data['middlename'],
-				'lastname' 			=> $data['lastname'],
-				'provinceid' 		=> $data['provinceid'],
+				'firstname' 				=> $data['firstname'],
+				'middlename' 				=> $data['middlename'],
+				'lastname' 					=> $data['lastname'],
+				'provinceid' 				=> $data['provinceid'],
 				'municipality_id' 	=> $data['municipality_id'],
-				'address' 			=> $data['address'],
-				'agency' 			=> $data['agency'],
-				'designation' 		=> $data['position'],
-				'emailaddress' 		=> $data['emailaddress'],
-				'mobile' 			=> $data['mobile'],
-				'username' 			=> $data['username'],
-				'password_hash' 	=> $password,
-				'isdswd' 			=> 'f'
+				'address' 					=> $data['address'],
+				'agency' 						=> $data['agency'],
+				'designation' 			=> $data['position'],
+				'emailaddress' 			=> $data['emailaddress'],
+				'mobile' 						=> $data['mobile'],
+				'username' 					=> $data['username'],
+				'password_hash' 		=> $password,
+				'isdswd' 						=> 'f'
 			);
 
 			$username = $data['username'];
@@ -5679,6 +5679,7 @@ class Disaster_model extends CI_Model{
 
 		public function get_can_edit($id,$username){
 
+			session_start();
 
 			$query = $this->db->query("SELECT * FROM tbl_disaster_title WHERE id = '$id'");
 
@@ -5701,8 +5702,13 @@ class Disaster_model extends CI_Model{
 				$arr3 = $query3->result_array();
 
 				if($arr3[0]['can_edit'] == 't'){
+
+					$_SESSION['can_edit'] = true;
+
 					return 1;
 				}else{
+
+					$_SESSION['can_edit'] = false;
 					return 0;
 				}
 

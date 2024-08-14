@@ -4,6 +4,8 @@
 
 		public function view($page = 'dashboard'){
 			
+			$this->load->helper('url');
+			
 			if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
 				show_404();
 			}

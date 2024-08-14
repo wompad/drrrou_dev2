@@ -1603,10 +1603,8 @@ function get_dromic(n){
 			    		text: '<i class="fa fa-check"></i> Yes',
 			    		btnClass: 'btn-red',
 			    		action: function(){
-
-			    			window.location.href = "https://apps2.caraga.dswd.gov.ph/drrrou_dev/dashboard";
-
-			            }
+			    			window.location.href = "/drrrou_dev/dashboard";
+			        }
 			    	}
 			    }
 			});

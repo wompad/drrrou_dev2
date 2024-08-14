@@ -1,75 +1,82 @@
+<?php
 
-        <script src="/drrrou_dev/assets/js/ip.js"></script>
+  $protocol = is_https() ? "https://" : "http://";
+  $base_url = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
+
+?>
+
+
+        <script src="<?php echo $base_url; ?>assets/js/ip.js"></script>
 
         <!-- FastClick -->
-        <script src="/drrrou_dev/vendors/fastclick/lib/fastclick.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/fastclick/lib/fastclick.js"></script>
         <!-- NProgress -->
-        <script src="/drrrou_dev/vendors/nprogress/nprogress.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/nprogress/nprogress.js"></script>
         <!-- Chart.js -->
-        <script src="/drrrou_dev/vendors/Chart.js/dist/Chart.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Chart.js/dist/Chart.min.js"></script>
         <!-- gauge.js -->
-        <script src="/drrrou_dev/vendors/gauge.js/dist/gauge.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/gauge.js/dist/gauge.min.js"></script>
         <!-- bootstrap-progressbar -->
-        <script src="/drrrou_dev/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
         <!-- iCheck -->
-        <script src="/drrrou_dev/vendors/iCheck/icheck.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/iCheck/icheck.min.js"></script>
         <!-- Skycons -->
-        <script src="/drrrou_dev/vendors/skycons/skycons.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/skycons/skycons.js"></script>
         <!-- Flot -->
-        <script src="/drrrou_dev/vendors/Flot/jquery.flot.js"></script>
-        <script src="/drrrou_dev/vendors/Flot/jquery.flot.pie.js"></script>
-        <script src="/drrrou_dev/vendors/Flot/jquery.flot.time.js"></script>
-        <script src="/drrrou_dev/vendors/Flot/jquery.flot.stack.js"></script>
-        <script src="/drrrou_dev/vendors/Flot/jquery.flot.resize.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.time.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.resize.js"></script>
         <!-- Flot plugins -->
-        <script src="/drrrou_dev/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-        <script src="/drrrou_dev/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-        <script src="/drrrou_dev/vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/flot.curvedlines/curvedLines.js"></script>
         <!-- DateJS -->
-        <script src="/drrrou_dev/vendors/DateJS/build/date.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/DateJS/build/date.js"></script>
         <!-- JQVMap -->
-        <script src="/drrrou_dev/vendors/jqvmap/dist/jquery.vmap.js"></script>
-        <script src="/drrrou_dev/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="/drrrou_dev/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
         <!-- bootstrap-daterangepicker -->
-        <script src="/drrrou_dev/vendors/moment/min/moment.min.js"></script>
-        <script src="/drrrou_dev/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script src="/drrrou_dev/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-        <script src="/drrrou_dev/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-        <script src="/drrrou_dev/vendors/google-code-prettify/src/prettify.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/moment/min/moment.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/google-code-prettify/src/prettify.js"></script>
 
-        <script src="/drrrou_dev/vendors/datatables.net/js/jquery.dataTables.js"></script>
-        <script src="/drrrou_dev/vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="<?php echo $base_url; ?>vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
 
-        <script src="/drrrou_dev/assets/js/jquery-ui.js"></script>
-        <script src="/drrrou_dev/assets/js/jquery-confirm.js"></script>
-        <script src="/drrrou_dev/assets/js/tabletoexcel.js"></script>
-        <script src="/drrrou_dev/assets/js/mask.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/jquery-ui.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/jquery-confirm.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/tabletoexcel.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/mask.js"></script>
 
-        <script src="/drrrou_dev/assets/js/Highcharts/highcharts.js"></script>
-        <script src="/drrrou_dev/assets/js/Highcharts/highcharts-3d.js"></script>
-        <script src="/drrrou_dev/assets/js/Highcharts/modules/data.js"></script>
-        <script src="/drrrou_dev/assets/js/Highcharts/modules/drilldown.js"></script>
-        <script src="/drrrou_dev/assets/js/Highcharts/exporting.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Highcharts/highcharts.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Highcharts/highcharts-3d.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Highcharts/modules/data.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Highcharts/modules/drilldown.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Highcharts/exporting.js"></script>
 
-        <script src="/drrrou_dev/assets/js/monthpicker/MonthPicker.min.js"></script>
-        <script src="/drrrou_dev/assets/js/Chosen/chosen.jquery.js" type="text/javascript"></script>
-        <script src="/drrrou_dev/assets/js/Chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/drrrou_dev/assets/js/Chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/drrrou_dev/assets/js/Hotkeys/jquery.hotkeys.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/drrrou_dev/assets/js/select.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/monthpicker/MonthPicker.min.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/Hotkeys/jquery.hotkeys.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/select.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="/drrrou_dev/assets/js/contextmenu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/contextmenu.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="/drrrou_dev/assets/js/contextmenu2.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/js/contextmenu2.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="/drrrou_dev/assets/autocomplete/jquery.auto-complete.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo $base_url; ?>assets/autocomplete/jquery.auto-complete.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="/drrrou_dev/assets/js/leaflet/leaflet.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/leaflet/leaflet.js"></script>
 
-        <script src="/drrrou_dev/assets/js/custom_user.js"></script>
+        <script src="<?php echo $base_url; ?>assets/js/custom_user.js"></script>
         <!-- Custom Theme Scripts -->
-        <script src="/drrrou_dev/build/js/custom.min.js"></script>
+        <script src="<?php echo $base_url; ?>build/js/custom.min.js"></script>
 
 
 

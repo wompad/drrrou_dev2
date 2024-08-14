@@ -353,7 +353,7 @@
                     <ul class="nav child_menu" style="display:block">
                       <?php if($_SESSION['can_create_report'] == 't'){ ?> <li><a href="/drrrou_dev/dromic_new">Add New | View DROMIC Report</a></li> <?php } ?>
                       <!-- <li><a href="/drrrou_dev/eopcen">Virtual OpCen <span class="badge" style="background-color:#D9534F" id="counteopcen"> </span> </a></li> -->
-                      <li><a href="/drrrou_dev/inbox2">Messages (Inbox) </a></li>
+                      <!-- <li><a href="/drrrou_dev/inbox2">Messages (Inbox) </a></li> -->
                       <li><a href="/drrrou_dev/weatherimage">Latest Weather Forecast</a></li>
                       <li><a href="/drrrou_dev/weatherradar">Weather Radar Image</a></li>
                       <li><a href="/drrrou_dev/earthquake">Earthquake Bulletin</a></li>

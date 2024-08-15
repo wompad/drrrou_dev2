@@ -2,9 +2,6 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$protocol = is_https() ? "https://" : "http://";
-$base_url = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,33 +14,33 @@ $base_url = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
     <title>DSWD DReAMU | </title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- NProgress -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/datatables.net-bs/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/datatables.net-bs/css/dataTables.bootstrap.css">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo $base_url; ?>build/css/custom.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>build/css/custom.min.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery-ui.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/autocomplete.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/autocomplete.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/jquery-confirm.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery-confirm.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>images/dromic1.jpg" rel="icon" type="image/png"/>
+    <link href="<?php echo base_url(); ?>images/dromic1.jpg" rel="icon" type="image/png"/>
 	<title>Coming Soon</title>
 </head>
 <body>

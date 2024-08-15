@@ -1,82 +1,75 @@
-<?php
 
-  $protocol = is_https() ? "https://" : "http://";
-  $base_url = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
-
-?>
-
-
-        <script src="<?php echo $base_url; ?>assets/js/ip.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/ip.js"></script>
 
         <!-- FastClick -->
-        <script src="<?php echo $base_url; ?>vendors/fastclick/lib/fastclick.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/fastclick/lib/fastclick.js"></script>
         <!-- NProgress -->
-        <script src="<?php echo $base_url; ?>vendors/nprogress/nprogress.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/nprogress/nprogress.js"></script>
         <!-- Chart.js -->
-        <script src="<?php echo $base_url; ?>vendors/Chart.js/dist/Chart.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Chart.js/dist/Chart.min.js"></script>
         <!-- gauge.js -->
-        <script src="<?php echo $base_url; ?>vendors/gauge.js/dist/gauge.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/gauge.js/dist/gauge.min.js"></script>
         <!-- bootstrap-progressbar -->
-        <script src="<?php echo $base_url; ?>vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
         <!-- iCheck -->
-        <script src="<?php echo $base_url; ?>vendors/iCheck/icheck.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/iCheck/icheck.min.js"></script>
         <!-- Skycons -->
-        <script src="<?php echo $base_url; ?>vendors/skycons/skycons.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/skycons/skycons.js"></script>
         <!-- Flot -->
-        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.pie.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.time.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.stack.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/Flot/jquery.flot.resize.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.time.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.resize.js"></script>
         <!-- Flot plugins -->
-        <script src="<?php echo $base_url; ?>vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/flot.curvedlines/curvedLines.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/flot.curvedlines/curvedLines.js"></script>
         <!-- DateJS -->
-        <script src="<?php echo $base_url; ?>vendors/DateJS/build/date.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/DateJS/build/date.js"></script>
         <!-- JQVMap -->
-        <script src="<?php echo $base_url; ?>vendors/jqvmap/dist/jquery.vmap.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
         <!-- bootstrap-daterangepicker -->
-        <script src="<?php echo $base_url; ?>vendors/moment/min/moment.min.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/google-code-prettify/src/prettify.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/moment/min/moment.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/google-code-prettify/src/prettify.js"></script>
 
-        <script src="<?php echo $base_url; ?>vendors/datatables.net/js/jquery.dataTables.js"></script>
-        <script src="<?php echo $base_url; ?>vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="<?php echo base_url(); ?>vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/jquery-ui.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/jquery-confirm.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/tabletoexcel.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/mask.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-confirm.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/tabletoexcel.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/mask.js"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/Highcharts/highcharts.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Highcharts/highcharts-3d.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Highcharts/modules/data.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Highcharts/modules/drilldown.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Highcharts/exporting.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Highcharts/highcharts.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Highcharts/highcharts-3d.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Highcharts/modules/data.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Highcharts/modules/drilldown.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Highcharts/exporting.js"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/monthpicker/MonthPicker.min.js"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Chosen/chosen.jquery.js" type="text/javascript"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
-        <script src="<?php echo $base_url; ?>assets/js/Hotkeys/jquery.hotkeys.js" type="text/javascript" charset="utf-8"></script>
-        <script src="<?php echo $base_url; ?>assets/js/select.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/monthpicker/MonthPicker.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/Hotkeys/jquery.hotkeys.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/select.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/contextmenu.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/contextmenu.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/contextmenu2.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/js/contextmenu2.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="<?php echo $base_url; ?>assets/autocomplete/jquery.auto-complete.js" type="text/javascript" charset="utf-8"></script>
+        <script src="<?php echo base_url(); ?>assets/autocomplete/jquery.auto-complete.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/leaflet/leaflet.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/leaflet/leaflet.js"></script>
 
-        <script src="<?php echo $base_url; ?>assets/js/custom_user.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/custom_user.js"></script>
         <!-- Custom Theme Scripts -->
-        <script src="<?php echo $base_url; ?>build/js/custom.min.js"></script>
+        <script src="<?php echo base_url(); ?>build/js/custom.min.js"></script>
 
 
 
@@ -171,26 +164,26 @@
               
               jQuery(document).ready(domo);
 
-              document.onkeydown = (e) => {
-                   if (e.key == 123) {
-                       e.preventDefault();
-                   }
-                   if (e.key == 'F12') {
-                       e.preventDefault();
-                   }
-                   if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-                       e.preventDefault();
-                   }
-                   if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-                       e.preventDefault();
-                   }
-                   if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-                       e.preventDefault();
-                   }
-                   if (e.ctrlKey && e.key == 'U') {
-                       e.preventDefault();
-                   }
-               };
+              // document.onkeydown = (e) => {
+              //      if (e.key == 123) {
+              //          e.preventDefault();
+              //      }
+              //      if (e.key == 'F12') {
+              //          e.preventDefault();
+              //      }
+              //      if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+              //          e.preventDefault();
+              //      }
+              //      if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+              //          e.preventDefault();
+              //      }
+              //      if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+              //          e.preventDefault();
+              //      }
+              //      if (e.ctrlKey && e.key == 'U') {
+              //          e.preventDefault();
+              //      }
+              //  };
           }
             
         </script>

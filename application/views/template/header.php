@@ -1,14 +1,11 @@
 <?php
 
-  $protocol = is_https() ? "https://" : "http://";
-  $base_url = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
-
   session_start();
 
   if(isset($_SESSION['username'])){
     
   }else{
-    header("Location: ".$base_url."login");
+    header("Location: ".base_url()."login");
   }
 
 ?>
@@ -25,47 +22,47 @@
     <title>DSWD DRMD | </title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo $base_url; ?>assets/css/jquery-te-1.4.0.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery-te-1.4.0.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- NProgress -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo $base_url; ?>vendors/datatables.net-bs/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/datatables.net-bs/css/dataTables.bootstrap.css">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo $base_url; ?>build/css/custom.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>build/css/custom.min.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery-ui.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/autocomplete.css" rel="stylesheet">
-    <link href="<?php echo $base_url; ?>assets/css/select.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/autocomplete.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/select.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/jquery-confirm.css" rel="stylesheet">
-    <link href="<?php echo $base_url; ?>assets/js/monthpicker/MonthPicker.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery-confirm.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/js/monthpicker/MonthPicker.min.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/js/Chosen/docsupport/prism.css" rel="stylesheet">
-    <link href="<?php echo $base_url; ?>assets/js/Chosen/chosen.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/js/Chosen/docsupport/prism.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/js/Chosen/chosen.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/js/leaflet/leaflet.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/js/leaflet/leaflet.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/autocomplete/jquery.auto-complete.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/autocomplete/jquery.auto-complete.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>assets/css/contextmenu.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/contextmenu.css" rel="stylesheet">
 
-    <link href="<?php echo $base_url; ?>images/dromic.png" rel="icon" type="image/png"/>
+    <link href="<?php echo base_url(); ?>images/dromic.png" rel="icon" type="image/png"/>
 
     <style>
       .report_summary_td{
@@ -317,11 +314,11 @@
     </style>
 
     <!-- jQuery -->
-  <script src="<?php echo $base_url; ?>vendors/jquery/dist/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>vendors/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="<?php echo $base_url; ?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <script src="<?php echo $base_url; ?>assets/js/dynamics.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/dynamics.js"></script>
 
   </head>
 
@@ -331,61 +328,61 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0; margin-top:5px">
-              <a href="" class="site_title"><img src="<?php echo $base_url; ?>images/dreamblogoweb.png" style="width:50px; height:50px;" class="img img-circle"> <span style="font-size:15px">DSWD DRMD</span></a>
+              <a href="" class="site_title"><img src="<?php echo base_url(); ?>images/dreamblogoweb.png" style="width:50px; height:50px;" class="img img-circle"> <span style="font-size:15px">DSWD DRMD</span></a>
             </div>
 
             <div class="clearfix"></div>
-            <label id="usernameid" style="display :none"><?= $_SESSION['username']?></label>
+            <label id="usernameid" style="display :none"><?= $_SESSION['username']; ?></label>
             <label id="can_edit" style="display :none"></label>
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li class="active"><a href="<?php echo $base_url; ?>dashboard"> <i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron-right"></span></a></li>
+                  <li class="active"><a href="<?php echo base_url(); ?>dashboard"> <i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron-right"></span></a></li>
                 </ul>
                 <ul class="nav side-menu" id="panelmenu">
                   <?php 
                       if($_SESSION['isadmin'] == "reports"){?>
                       <li class='active'><a><i class='fa fa-th'></i> Reports <span class='fa fa-chevron-down'></span></a>
                         <ul class='nav child_menu' style='display:block'>
-                          <li><a href='<?php echo $base_url; ?>congressional'>Congressional Report</a></li>
-                          <li><a href='<?php echo $base_url; ?>reliefassistance'>Augmentation Assistance Report</a></li>
+                          <li><a href='<?php echo base_url(); ?>congressional'>Congressional Report</a></li>
+                          <li><a href='<?php echo base_url(); ?>reliefassistance'>Augmentation Assistance Report</a></li>
                         </ul>
                       </li>
                   <?php }else{ ?>
                   <li class="active"><a><i class="fa fa-table"></i> Operation Center<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
-                      <?php if($_SESSION['can_create_report'] == 't'){ ?> <li><a href="<?php echo $base_url; ?>dromic_new">Add New | View DROMIC Report</a></li> <?php } ?>
-                      <!-- <li><a href="<?php echo $base_url; ?>eopcen">Virtual OpCen <span class="badge" style="background-color:#D9534F" id="counteopcen"> </span> </a></li> -->
-                      <!-- <li><a href="<?php echo $base_url; ?>inbox2">Messages (Inbox) </a></li> -->
-                      <li><a href="<?php echo $base_url; ?>weatherimage">Latest Weather Forecast</a></li>
-                      <li><a href="<?php echo $base_url; ?>weatherradar">Weather Radar Image</a></li>
-                      <li><a href="<?php echo $base_url; ?>earthquake">Earthquake Bulletin</a></li>
+                      <?php if($_SESSION['can_create_report'] == 't'){ ?> <li><a href="<?php echo base_url(); ?>dromic_new">Add New | View DROMIC Report</a></li> <?php } ?>
+                      <!-- <li><a href="<?php echo base_url(); ?>eopcen">Virtual OpCen <span class="badge" style="background-color:#D9534F" id="counteopcen"> </span> </a></li> -->
+                      <!-- <li><a href="<?php echo base_url(); ?>inbox2">Messages (Inbox) </a></li> -->
+                      <li><a href="<?php echo base_url(); ?>weatherimage">Latest Weather Forecast</a></li>
+                      <li><a href="<?php echo base_url(); ?>weatherradar">Weather Radar Image</a></li>
+                      <li><a href="<?php echo base_url(); ?>earthquake">Earthquake Bulletin</a></li>
                     </ul>
                   </li>
                   <!-- <li class="active">
                     <a><i class="fa fa-phone"></i> My Contact List <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
-                      <li><a href="<?php echo $base_url; ?>home">C/MSWDO Contacts</a></li>
-                      <li><a href="<?php echo $base_url; ?>cmatleaders">CMAT/PAT Contacts</a></li>
+                      <li><a href="<?php echo base_url(); ?>home">C/MSWDO Contacts</a></li>
+                      <li><a href="<?php echo base_url(); ?>cmatleaders">CMAT/PAT Contacts</a></li>
                     </ul>
                   </li> -->
                   <?php 
                       if($_SESSION['isadmin'] == "t"){?>
                   <!-- <li class="active"><a><i class="fa fa-map-o"></i> Web Map Application <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display:block">
-                      <li><a href="<?php echo $base_url; ?>webmap">View Map</a></li>
+                      <li><a href="<?php echo base_url(); ?>webmap">View Map</a></li>
                     </ul>
                   </li> -->
                   <!-- <li class='active'><a><i class='fa fa-th'></i> Reports <span class='fa fa-chevron-down'></span></a>
                     <ul class='nav child_menu' style='display:block'>
-                      <li><a href='<?php echo $base_url; ?>addreliefassistance'>Add Relief Assistance</a></li>
-                      <li><a href='<?php echo $base_url; ?>reliefassistance'>Augmentation Assistance Report</a></li>
-                      <li><a href='<?php echo $base_url; ?>congressional'>Congressional Report</a></li>
+                      <li><a href='<?php echo base_url(); ?>addreliefassistance'>Add Relief Assistance</a></li>
+                      <li><a href='<?php echo base_url(); ?>reliefassistance'>Augmentation Assistance Report</a></li>
+                      <li><a href='<?php echo base_url(); ?>congressional'>Congressional Report</a></li>
                     </ul>
                   </li> -->
                   <!-- <li class='active'><a><i class='fa fa-users'></i> User Management <span class='fa fa-chevron-down'></span></a>
                     <ul class='nav child_menu' style='display:block'>
-                      <li><a href='<?php echo $base_url; ?>qrt_teams'>QRT Teams</a></li>
+                      <li><a href='<?php echo base_url(); ?>qrt_teams'>QRT Teams</a></li>
                     </ul>
                   </li> -->
                   <?php } } ?>
@@ -393,11 +390,11 @@
                     <ul class='nav child_menu' style='display:block'>
                       <?php 
                       if($_SESSION['isadmin'] == "t"){?>
-                      <!-- <li><a href='<?php echo $base_url; ?>mobile_user_activation'>Activate Mobile Users</a></li> -->
+                      <!-- <li><a href='<?php echo base_url(); ?>mobile_user_activation'>Activate Mobile Users</a></li> -->
                       <?php } ?>
 
                       <?php 
-                      if($_SESSION['can_create_report'] == "t"){?> <li><a href='<?php echo $base_url; ?>reportsmanagement'>Reports Management</a></li>
+                      if($_SESSION['can_create_report'] == "t"){?> <li><a href='<?php echo base_url(); ?>reportsmanagement'>Reports Management</a></li>
                       <?php } ?>
                     </ul>
                   </li>
@@ -415,12 +412,12 @@
               <ul class="nav navbar-nav navbar-right" style="margin-top:-10px;">
                 <li style="height:50px">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="height:50px">
-                    <span class="fa fa-user" style="color:#fff"></span> <span style="color:#fff; text-transform:capitalize"><?php echo $_SESSION['fullname'] ?></span>
+                    <span class="fa fa-user" style="color:#fff"></span> <span style="color:#fff; text-transform:capitalize"><?php echo $_SESSION['fullname']; ?></span>
                     <span class=" fa fa-angle-down" style="color:#fff"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="<?php echo $base_url; ?>logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                    <!-- <li><a href="<?php echo $base_url; ?>changepassword"><i class="fa fa-key pull-right"></i> Change Password</a></li> -->
+                    <li><a href="<?php echo base_url(); ?>logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <!-- <li><a href="<?php echo base_url(); ?>changepassword"><i class="fa fa-key pull-right"></i> Change Password</a></li> -->
                   </ul>
                 </li>
               </ul>

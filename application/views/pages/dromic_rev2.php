@@ -12,7 +12,7 @@
 	  <?php } ?>
 	</ul>
 	<!-- <div class="pull-right" style="margin-top:-50px;" id="loader">
-		<img src="<?php echo $base_url; ?>assets/images/spin.gif" style='width:45px; height:45px'> <b>Please wait while loading data...</b>
+		<img src="<?php echo $base_url(); ?>assets/images/spin.gif" style='width:45px; height:45px'> <b>Please wait while loading data...</b>
 		<div class="loader"></div>
 	</div> -->
 	<div style="left:50%; top:45%; position:fixed; z-index:99999; background-color:#304456; padding-top:20px; padding-bottom:20px; padding-left:50px; padding-right:45px; border-radius:5px; color:#fff" id="loader">

@@ -1,3 +1,5 @@
+
+
 <div id="damagesperbrgy" class="tab-pane fade">
 	<div class="col-md-6" style="margin-top:20px; position: sticky; position: -webkit-sticky;">
 		<div class="col-md-12 bg-white">

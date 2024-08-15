@@ -2848,17 +2848,14 @@ class Disaster_model extends CI_Model{
 
 			if($query->num_rows() > 0){
 
-
-				$arr = $query->result_array();
-					
 				session_start();
 
-				$_SESSION['username'] 	= $username;
-				$_SESSION['password'] 	= $password;
+				$arr = $query->result_array();
 
-				$_SESSION['fullname'] 	= $arr[0]['fullname'];
+				$_SESSION['username'] = $username;
+				$_SESSION['password'] = $password;
+				$_SESSION['fullname'] = $arr[0]['fullname'];
 				$_SESSION['isadmin'] 	= $arr[0]['isadmin'];
-
 				$_SESSION['ishead'] 	= $arr[0]['ishead'];
 				$_SESSION['isdswd'] 	= $arr[0]['isdswd'];
 
@@ -5703,7 +5700,7 @@ class Disaster_model extends CI_Model{
 
 				if($arr3[0]['can_edit'] == 't'){
 
-					$_SESSION['can_edit'] = true;
+					$_SESSION['can_edit'] = '1';
 
 					return 1;
 				}else{
@@ -5714,13 +5711,10 @@ class Disaster_model extends CI_Model{
 
 			}
 
-
 		}
 
 
 		public function save_report_comment($id, $msg, $username){
-
-			
 
 			$query = $this->db->query("SELECT * FROM tbl_disaster_title WHERE id = '$id'");
 

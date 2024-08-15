@@ -5,7 +5,7 @@
   if(isset($_SESSION['username'])){
     
   }else{
-    header("Location: ".base_url()."login");
+    header("Location: login");
   }
 
 ?>

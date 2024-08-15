@@ -3,7 +3,7 @@
   session_start();
 
   if(isset($_SESSION['username'])){
-    header("Location: ".base_url()."dashboard");
+    header("Location: dashboard");
   }
 
 ?>
@@ -20,33 +20,33 @@
     <title>DSWD DRMD | </title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- NProgress -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
   
     <!-- bootstrap-progressbar -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/datatables.net-bs/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs/css/dataTables.bootstrap.css">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url(); ?>build/css/custom.min.css" rel="stylesheet">
+    <link href="build/css/custom.min.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>assets/css/autocomplete.css" rel="stylesheet">
+    <link href="assets/css/autocomplete.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>assets/css/jquery-confirm.css" rel="stylesheet">
+    <link href="assets/css/jquery-confirm.css" rel="stylesheet">
 
-    <link href="<?php echo base_url(); ?>images/dromic.png" rel="icon" type="image/png"/>
+    <link href="images/dromic.png" rel="icon" type="image/png"/>
 
     <style>
       .btn {
@@ -165,7 +165,7 @@
                 <br />
 
                 <div>
-                  <h1><img src="<?php echo base_url(); ?>images/dreamblogoweb.png" style="width:45px; height:40px"> DSWD DRMD</h1>
+                  <h1><img src="images/dreamblogoweb.png" style="width:45px; height:40px"> DSWD DRMD</h1>
                   <h5>Contact DSWD Caraga: 342-5619 local 238</h5>
                   <h5>Email Address: drrroufocaraga@gmail.com</h5>
                   <p>Copyright ©<?= date("Y") ?> DSWD DRMD. All Rights Reserved. Privacy Policy.</p>
@@ -238,7 +238,7 @@
                 <br />
 
                 <div>
-                  <h1><img src="<?php echo base_url(); ?>images/dreamblogoweb.png" style="width:40px; height:40px"> DSWD DRMD</h1>
+                  <h1><img src="images/dreamblogoweb.png" style="width:40px; height:40px"> DSWD DRMD</h1>
                   <p>Copyright ©<?= date("Y") ?> DSWD DRMD. All Rights Reserved. Privacy Policy.</p>
                 </div>
               </div>
@@ -247,52 +247,51 @@
         </div>
       </div>
 
-
         <!-- jQuery -->
-      <script src="<?php echo base_url(); ?>vendors/jquery/dist/jquery.min.js"></script>
-      <script src="<?php echo base_url(); ?>assets/js/ip.js"></script>
+      <script src="vendors/jquery/dist/jquery.min.js"></script>
+      <script src="assets/js/ip.js"></script>
       <!-- Bootstrap -->
-      <script src="<?php echo base_url(); ?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
       <!-- FastClick -->
-      <script src="<?php echo base_url(); ?>vendors/fastclick/lib/fastclick.js"></script>
+      <script src="vendors/fastclick/lib/fastclick.js"></script>
       <!-- NProgress -->
-      <script src="<?php echo base_url(); ?>vendors/nprogress/nprogress.js"></script>
+      <script src="vendors/nprogress/nprogress.js"></script>
       <!-- Chart.js -->
-      <script src="<?php echo base_url(); ?>vendors/Chart.js/dist/Chart.min.js"></script>
+      <script src="vendors/Chart.js/dist/Chart.min.js"></script>
       <!-- gauge.js -->
-      <script src="<?php echo base_url(); ?>vendors/gauge.js/dist/gauge.min.js"></script>
+      <script src="vendors/gauge.js/dist/gauge.min.js"></script>
       <!-- bootstrap-progressbar -->
-      <script src="<?php echo base_url(); ?>vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+      <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
       <!-- iCheck -->
-      <script src="<?php echo base_url(); ?>vendors/iCheck/icheck.min.js"></script>
+      <script src="vendors/iCheck/icheck.min.js"></script>
       <!-- Skycons -->
-      <script src="<?php echo base_url(); ?>vendors/skycons/skycons.js"></script>
+      <script src="vendors/skycons/skycons.js"></script>
       <!-- Flot -->
-      <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.pie.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.time.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.stack.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/Flot/jquery.flot.resize.js"></script>
+      <script src="vendors/Flot/jquery.flot.js"></script>
+      <script src="vendors/Flot/jquery.flot.pie.js"></script>
+      <script src="vendors/Flot/jquery.flot.time.js"></script>
+      <script src="vendors/Flot/jquery.flot.stack.js"></script>
+      <script src="vendors/Flot/jquery.flot.resize.js"></script>
       <!-- Flot plugins -->
-      <script src="<?php echo base_url(); ?>vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/flot.curvedlines/curvedLines.js"></script>
+      <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+      <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+      <script src="vendors/flot.curvedlines/curvedLines.js"></script>
       <!-- DateJS -->
-      <script src="<?php echo base_url(); ?>vendors/DateJS/build/date.js"></script>
+      <script src="vendors/DateJS/build/date.js"></script>
       <!-- JQVMap -->
-      <script src="<?php echo base_url(); ?>vendors/jqvmap/dist/jquery.vmap.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+      <script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+      <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+      <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
       <!-- bootstrap-daterangepicker -->
-      <script src="<?php echo base_url(); ?>vendors/moment/min/moment.min.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <script src="vendors/moment/min/moment.min.js"></script>
+      <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-      <script src="<?php echo base_url(); ?>vendors/datatables.net/js/jquery.dataTables.js"></script>
-      <script src="<?php echo base_url(); ?>vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+      <script src="vendors/datatables.net/js/jquery.dataTables.js"></script>
+      <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.js"></script>
 
-      <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
-      <script src="<?php echo base_url(); ?>assets/js/jquery-confirm.js"></script>
-      <script src="<?php echo base_url(); ?>build/js/custom.min.js"></script>
+      <script src="assets/js/jquery-ui.js"></script>
+      <script src="assets/js/jquery-confirm.js"></script>
+      <script src="build/js/custom.min.js"></script>
       <script>
 
       get_province();
@@ -425,8 +424,6 @@
       })
 
       $('#signup').click(function(){
-
-
 
         var datas = {
           data : {

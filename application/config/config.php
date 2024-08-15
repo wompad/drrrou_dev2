@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $protocol = is_https() ? "https://" : "http://";
 
-$config['base_url'] = $protocol."".$_SERVER['SERVER_NAME']."/drrrou_dev/";
+$config['base_url'] = "localhost";
 
 /*
 |--------------------------------------------------------------------------

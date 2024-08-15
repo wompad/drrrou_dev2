@@ -264,7 +264,7 @@ function get_mswdo(){
 
 	$('#tbl_mswdo tbody').empty();
 
-	$.getJSON(serverip+"get_mswdo",function(a){  
+	$.getJSON("/Pages/get_mswdo",function(a){  
 
 	    for(var i in a){
 	      $('#tbl_mswdo tbody').append(
@@ -316,7 +316,7 @@ var fnfi_full = [];
 
 function get_fnfi(){
 
-	$.getJSON(serverip+"get_fnfi",function(a){  
+	$.getJSON("/Pages/get_fnfi",function(a){  
 
 		for(var t in a){
 			fnfi.push(a[t].fnfi_name);
@@ -346,7 +346,7 @@ function get_province(){
 	    "<option value=''>-- Select Province --</option>"
 	);	
 
-	$.getJSON(serverip+"get_province",function(a){  
+	$.getJSON("/Pages/get_province",function(a){  
 
 	    for(var i in a){
 	      $('#province').append(
@@ -404,7 +404,7 @@ $('#province').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#city').append(
@@ -425,7 +425,7 @@ $('#provinceAssistance').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#cityAssistance').append(
@@ -446,7 +446,7 @@ $('#addfamNinsideECprov').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#addfamNinsideECcity').append(
@@ -469,7 +469,7 @@ $('#addfaminsideECprov').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#addfaminsideECcity').append(
@@ -492,7 +492,7 @@ $('#addDamprov').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#addDamcity').append(
@@ -513,7 +513,7 @@ $('#provinceSexAge').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#citySexAge').append(
@@ -532,7 +532,7 @@ $('#addDamcity').change(function(){
 		disaster_title_id 	: URLID()
 	}
 
-	$.getJSON(serverip+"check_municipality_in_damass",datas,function(a){  
+	$.getJSON("/Pages/check_municipality_in_damass",datas,function(a){  
 		if(a > 0){
 			msgbox("Municipality already exist. Kindly check on Damage and Assistance Tab and double the entry to update data!");
 			$('#addDamcity').val('');
@@ -550,7 +550,7 @@ $('#addfamOECprov').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#addfamOECcity').append(
@@ -578,7 +578,7 @@ $('#addfamOECprovO').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 
@@ -613,7 +613,7 @@ $('#addfamOECcity').change(function(){
 	);
 
 
-	$.getJSON(serverip+"getAllOriginBrgy",datas,function(a){
+	$.getJSON("/Pages/getAllOriginBrgy",datas,function(a){
 
 		for(var t in a){
 			$('#addfamOECbrgy').append(
@@ -653,7 +653,7 @@ $('#addfamOECcityO').change(function(){
 	);
 
 
-	$.getJSON(serverip+"getAllOriginBrgy",datas,function(a){
+	$.getJSON("/Pages/getAllOriginBrgy",datas,function(a){
 
 		for(var t in a){
 
@@ -703,7 +703,7 @@ $('#addcasualtyprov').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#addcasualtycity').append(
@@ -724,7 +724,7 @@ $('#province_dam_per_brgy').change(function(){
 	    "<option value=''>-- Select City/Municipality --</option>"
 	);
 
-	$.getJSON(serverip+"get_municipality",function(a){  
+	$.getJSON("/Pages/get_municipality",function(a){  
 	    for(var i in a){
 	    	if(pid == a[i].provinceid){
 	    		$('#city_dam_per_brgy').append(
@@ -750,7 +750,7 @@ $('#savedata_mswd').click(function(){
 		emailadd 	: $('#emailadd').val()
 	}
 
-	$.getJSON(serverip+"insert_mswdo",datas,function(a){  
+	$.getJSON("/Pages/insert_mswdo",datas,function(a){  
 	    if(a == 1){
 	    	alerts();
 	    	get_mswdo();
@@ -770,7 +770,7 @@ function passmswdData(e){
 
 	mswdid = e;
 	
-	$.getJSON(serverip+"get_mswdinfo",datas,function(a){  
+	$.getJSON("/Pages/get_mswdinfo",datas,function(a){  
 
 	    for(var i in a){
 	      	$('#fullname').val(a[i].fullname);
@@ -778,7 +778,7 @@ function passmswdData(e){
 			$('#vmayor').val(a[i].vmayor);
 			$('#province').val(a[i].province_id);
 
-			$.getJSON(serverip+"get_municipality",function(rs){  
+			$.getJSON("/Pages/get_municipality",function(rs){  
 				$('#city').empty();
 			    for(var j in rs){
 			    	if(a[i].province_id == rs[j].provinceid){
@@ -817,7 +817,7 @@ $('#updatedata_mswd').click(function(){
 		emailadd 	: $('#emailadd').val()
 	};
 
-	$.getJSON(serverip+"update_mswd",datas,function(a){  
+	$.getJSON("/Pages/update_mswd",datas,function(a){  
 		if(a == 1){
 			alerts();
 			get_mswdo();
@@ -843,7 +843,7 @@ $('#deletedata_mswd').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"delete_mswd",datas,function(a){
+	    			$.getJSON("/Pages/delete_mswd",datas,function(a){
 	    				$.alert('Data successfully deleted!');
 	    				get_mswdo();
 	                	resetAll();
@@ -865,7 +865,7 @@ function get_matleader(){
 
 	$('#tbl_cmatleader tbody').empty();
 
-	$.getJSON(serverip+"get_matleader",function(a){  
+	$.getJSON("/Pages/get_matleader",function(a){  
 		// title='Click on each row to edit/delete data' onclick='passmatleaderData("+a[i].id+")'
 		for(var i in a){
 	      $('#tbl_cmatleader tbody').append(
@@ -908,7 +908,7 @@ function get_matleader(){
 
 	});
 
-	$.getJSON(serverip+"get_pats",function(a){
+	$.getJSON("/Pages/get_pats",function(a){
 		for(var i in a){
 			$('#tbl_patleader tbody').append(
 		          "<tr style='cursor:pointer'>"+
@@ -948,7 +948,7 @@ function get_matleader(){
 
 	});
 
-	$.getJSON(serverip+"get_ldrrmos",function(a){
+	$.getJSON("/Pages/get_ldrrmos",function(a){
 		for(var i in a){
 			$('#tbl_ldrrmo tbody').append(
 		          "<tr style='cursor:pointer'>"+
@@ -1006,7 +1006,7 @@ $('#savedata_mat').click(function(){
 		isleader 			: 't'
 	};
 
-	$.getJSON(serverip+"insert_matleader",datas,function(a){  
+	$.getJSON("/Pages/insert_matleader",datas,function(a){  
 		if(a == 1){
 			alerts();
 			get_matleader();
@@ -1024,7 +1024,7 @@ function passmatleaderData(e){
 
 	matleaderid = e;
 
-	$.getJSON(serverip+"get_matleaderinfo",datas,function(a){
+	$.getJSON("/Pages/get_matleaderinfo",datas,function(a){
 
 		for(var i in a){
 			$('#fullname').val(a[i].fullname);
@@ -1035,7 +1035,7 @@ function passmatleaderData(e){
 			$('#course').val(a[i].course);
 			$('#province').val(a[i].provinceid);
 
-			$.getJSON(serverip+"get_municipality",function(rs){  
+			$.getJSON("/Pages/get_municipality",function(rs){  
 				$('#city').empty();
 			    for(var j in rs){
 			    	if(a[i].provinceid == rs[j].provinceid){
@@ -1072,7 +1072,7 @@ $('#deletedata_mat').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"delete_matleader",datas,function(a){
+	    			$.getJSON("/Pages/delete_matleader",datas,function(a){
 	    				$.alert({
 		                	title : '',
 		                	content : 'Data successfully deleted!',
@@ -1115,7 +1115,7 @@ $('#updatedata_mat').click(function(){
 		emailaddress 		: $('#emailadd').val()
 	};
 
-	$.getJSON(serverip+"update_matleader",datas,function(a){  
+	$.getJSON("/Pages/update_matleader",datas,function(a){  
 		if(a == 1){
 			alerts();
 			get_matleader();
@@ -1138,7 +1138,7 @@ $('#updatedata_mat').click(function(){
 
 // 	$('#tbl_cmatmember tbody').empty();
 
-// 	$.getJSON(serverip+"get_matmember",function(a){  
+// 	$.getJSON("/Pages/get_matmember",function(a){  
 
 // 		for(var i in a){
 // 	      $('#tbl_cmatmember tbody').append(
@@ -1177,7 +1177,7 @@ $('#savedata_matmember').click(function(){
 		isleader 			: 'f'
 	};
 
-	$.getJSON(serverip+"insert_matleader",datas,function(a){  
+	$.getJSON("/Pages/insert_matleader",datas,function(a){  
 		if(a == 1){
 			alerts();
 			get_matmember();
@@ -1195,7 +1195,7 @@ function passmatmemberData(e){
 
 	matleaderid = e;
 
-	$.getJSON(serverip+"get_matleaderinfo",datas,function(a){
+	$.getJSON("/Pages/get_matleaderinfo",datas,function(a){
 
 		for(var i in a){
 			$('#fullname').val(a[i].fullname);
@@ -1204,7 +1204,7 @@ function passmatmemberData(e){
 			$('#gender').val(a[i].gender);
 			$('#province').val(a[i].provinceid);
 
-			$.getJSON(serverip+"get_municipality",function(rs){  
+			$.getJSON("/Pages/get_municipality",function(rs){  
 				$('#city').empty();
 			    for(var j in rs){
 			    	if(a[i].provinceid == rs[j].provinceid){
@@ -1245,7 +1245,7 @@ $('#updatedata_matmember').click(function(){
 		isleader 			: 'f'
 	};
 
-	$.getJSON(serverip+"update_matleader",datas,function(a){  
+	$.getJSON("/Pages/update_matleader",datas,function(a){  
 		if(a == 1){
 			alerts();
 			get_matmember();
@@ -1271,7 +1271,7 @@ $('#deletedata_matmember').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"delete_matleader",datas,function(a){
+	    			$.getJSON("/Pages/delete_matleader",datas,function(a){
 	    				$.alert({
 		                	title : '',
 		                	content : 'Data successfully deleted!',
@@ -1308,7 +1308,7 @@ $('#selectcontact').change(function(){
 
 	if(e != ""){
 		if(e == 1){
-			$.getJSON(serverip+"get_mswdo",function(a){  
+			$.getJSON("/Pages/get_mswdo",function(a){  
 				for(var i in a){
 					$('#tbl_selectcontact tbody').append(
 						"<tr>"+
@@ -1321,7 +1321,7 @@ $('#selectcontact').change(function(){
 				}
 			});
 		}else if(e == 2){
-			$.getJSON(serverip+"get_matleader",function(a){  
+			$.getJSON("/Pages/get_matleader",function(a){  
 				for(var i in a){
 					$('#tbl_selectcontact tbody').append(
 						"<tr>"+
@@ -1334,7 +1334,7 @@ $('#selectcontact').change(function(){
 				}
 			});
 		}else{
-			$.getJSON(serverip+"get_matmember",function(a){  
+			$.getJSON("/Pages/get_matmember",function(a){  
 				for(var i in a){
 					$('#tbl_selectcontact tbody').append(
 						"<tr>"+
@@ -1414,7 +1414,7 @@ function getDisaster(){
 		usernameid : $('#usernameid').text()
 	}
 
-	$.getJSON(serverip+"getdisaster",datas,function(a){
+	$.getJSON("/Pages/getdisaster",datas,function(a){
 
 		for(var i in a){
 			if(Number(a[i].tcount) == 0){
@@ -1495,7 +1495,7 @@ $('#addDromic').click(function(){
 		    }
 		});
 	}else{
-		$.getJSON(serverip+"addnew_disaster",datas,function(a){  
+		$.getJSON("/Pages/addnew_disaster",datas,function(a){  
 			if(a == 1){
 				alerts();
 				getDisaster();
@@ -1526,7 +1526,7 @@ $('#sendsms').click(function(){
 					body 	: $('#smsbody').val() + " " + $('#postsmsbody').val()
 				}
 
-				$.getJSON(serverip+"sendsms",datas,function(a){})
+				$.getJSON("/Pages/sendsms",datas,function(a){})
 		    }, 2000*i);
 		});
 
@@ -1552,7 +1552,7 @@ function get_narrative_report(){
 
 	}
 
-	$.getJSON(serverip+"get_narrative_report",datas,function(a){
+	$.getJSON("/Pages/get_narrative_report",datas,function(a){
 
 		if(a == 0){
 			console.log("No narrative report");
@@ -1588,7 +1588,7 @@ function get_dromic(n){
 
 	get_narrative_report();
 
-	$.getJSON(serverip+"get_can_view",datum,function(a){
+	$.getJSON("/Pages/get_can_view",datum,function(a){
 
 		if(a == 0){
 
@@ -1609,7 +1609,7 @@ function get_dromic(n){
 		}else{
 
 
-			$.getJSON(serverip+"get_can_edit",datum,function(a){
+			$.getJSON("/Pages/get_can_edit",datum,function(a){
 
 				if(a == 0){
 
@@ -1650,7 +1650,7 @@ function get_dromic(n){
 
 			var t = 0;
 
-			$.getJSON(serverip+"get_evac_stats",datas,function(a){
+			$.getJSON("/Pages/get_evac_stats",datas,function(a){
 
 				rs = a;	
 				$('#loader').hide();
@@ -4678,7 +4678,7 @@ function get_dromic(n){
 				id : URLID()
 			}
 
-			$.getJSON(serverip+"get_dswd_assistance",datas,function(a){
+			$.getJSON("/Pages/get_dswd_assistance",datas,function(a){
 
 				var k = a.length - 1;
 
@@ -4766,7 +4766,7 @@ function get_dromic(n){
 
 			})
 
-			$.getJSON(serverip+"get_dswd_assistance_summary",datas,function(a){
+			$.getJSON("/Pages/get_dswd_assistance_summary",datas,function(a){
 
 				let item_arr = [];
 				let muni_arr = [];
@@ -5025,7 +5025,7 @@ function get_dromic(n){
 
 			$('#tbl_damages_per_brgy tbody').empty();
 
-			$.getJSON(serverip+"get_damage_per_brgy",datas,function(a){
+			$.getJSON("/Pages/get_damage_per_brgy",datas,function(a){
 
 				for(var i in provinces){	
 
@@ -5219,7 +5219,7 @@ function updateOutsideEvacuation(id){
 			id : id
 		};
 
-		$.getJSON(serverip+"getFamOEC",datas,function(a){
+		$.getJSON("/Pages/getFamOEC",datas,function(a){
 
 			$('#addfamOECprov').val(a.rs[0].provinceid);
 			$('#addfamOECprovO').val(a.rs[0].province_origin);
@@ -5333,7 +5333,7 @@ function updateAssistanceList(id){
 	var datas = {
 		id : id
 	}
-	// $.getJSON(serverip+"get_spec_assistance",datas,function(a){
+	// $.getJSON("/Pages/get_spec_assistance",datas,function(a){
 
 	// 	$('#families_served').val(a['rs'][0]['family_served']);
 	// 	$('#single_cal3').val(todate3(a['rs'][0]['date_augmented']));
@@ -5353,7 +5353,7 @@ function updateAssistanceList(id){
 		    		btnClass: 'btn-red',
 		    		action: function(){
 
-		    			$.getJSON(serverip+"del_spec_assistance",datas,function(a){
+		    			$.getJSON("/Pages/del_spec_assistance",datas,function(a){
 		    				if(a == 1){
 		    					get_dromic(URLID());
 		    				}
@@ -5396,7 +5396,7 @@ function updatedeldamageperbrgy(id){
 		$('#deldata_dam_per_brgyv2').show();
 
 		damage_per_brgy_id = id;
-		$.getJSON(serverip+"get_damage_per_brgy_details",datas,function(a){
+		$.getJSON("/Pages/get_damage_per_brgy_details",datas,function(a){
 				for(var i in a['details']){
 
 					$('#details_province').text(a['details'][i].province_name)
@@ -5503,7 +5503,7 @@ $('#updatedata_dam_per_brgyv2').click(function(){
 			id 					: damage_per_brgy_id
 		};
 
-		$.getJSON(serverip+"updatedamageperbrgy",datas,function(a){
+		$.getJSON("/Pages/updatedamageperbrgy",datas,function(a){
 			if(a == 1){
 
 				$('#editDamageModal').modal('hide');
@@ -5569,7 +5569,7 @@ $('#deldata_dam_per_brgyv2').click(function(){
 		    		text: '<i class="fa fa-check"></i> Yes',
 		    		btnClass: 'btn-red',
 		    		action: function(){
-		    			$.getJSON(serverip+"deletedamageperbrgy",datas,function(a){
+		    			$.getJSON("/Pages/deletedamageperbrgy",datas,function(a){
 							if(a == 1){
 
 								$('#editDamageModal').modal('hide');
@@ -5640,7 +5640,7 @@ $('#updatedata_dam_per_brgy').click(function(){
 			id 					: damage_per_brgy_id
 		};
 
-		$.getJSON(serverip+"updatedamageperbrgy",datas,function(a){
+		$.getJSON("/Pages/updatedamageperbrgy",datas,function(a){
 			if(a == 1){
 
 				get_dromic(URLID());
@@ -5701,7 +5701,7 @@ $('#deldata_dam_per_brgy').click(function(){
 		    		text: '<i class="fa fa-check"></i> Yes',
 		    		btnClass: 'btn-red',
 		    		action: function(){
-		    			$.getJSON(serverip+"deletedamageperbrgy",datas,function(a){
+		    			$.getJSON("/Pages/deletedamageperbrgy",datas,function(a){
 							if(a == 1){
 
 								get_dromic(uriID);
@@ -5859,7 +5859,7 @@ function viewLatestReport(i){
 		id : i
 	};
 
-	$.getJSON(serverip+"get_disasterdetail",datas,function(a){  
+	$.getJSON("/Pages/get_disasterdetail",datas,function(a){  
 
 		var id = a.rstitle[0].id;
 		viewDetailsPrev(id);
@@ -5880,7 +5880,7 @@ function viewPrevious(i){
 		dtable.destroy();
 	}
 
-	$.getJSON(serverip+"get_disasterdetail",datas,function(a){  
+	$.getJSON("/Pages/get_disasterdetail",datas,function(a){  
 
 		$('#disaster_name_modal').empty().append('Previous Reports ('+a.rs[0].disaster_name+ ' '+todate(a.rs[0].disaster_date)+')');
 		$('#tbl_previous_reports tbody').empty();
@@ -5917,7 +5917,7 @@ function viewDetailsPrev(i){
 		    }
 		});
 	}else{
-			var win = window.open(serverip2+"?XCqdPsmLaQwAyt="+i,'Report Details');
+			var win = window.open("dromic_master_excel/?XCqdPsmLaQwAyt="+i,'Report Details');
 	}
 }
 
@@ -5936,7 +5936,7 @@ function addnewReport(i){
 
 	$('#addnewReport').modal('show');
 
-	$.getJSON(serverip+"get_teamleader",function(a){ 
+	$.getJSON("/Pages/get_teamleader",function(a){ 
 		if(a != 0){
 			for(var i in a){
 				if(a[i].qrt_position_id == 2){
@@ -6042,7 +6042,7 @@ function savenewDromic(){
 		},1500);
 
 	}else{
-		$.getJSON(serverip+"savenewtitle",datas,function(a){
+		$.getJSON("/Pages/savenewtitle",datas,function(a){
 			viewDetailsPrev(a);
 		})
 	}
@@ -6150,7 +6150,7 @@ function addFamIEC(){
 						msgbox("Kindly indicate Evacuation Center Status to continue!");
 					}else{
 
-						$.getJSON(serverip+"savenewEC",datas,function(a){
+						$.getJSON("/Pages/savenewEC",datas,function(a){
 
 							alerts();
 							get_dromic(uriID);
@@ -6178,7 +6178,7 @@ function addFamIEC(){
 
 				}else{
 
-					$.getJSON(serverip+"savenewEC",datas,function(a){
+					$.getJSON("/Pages/savenewEC",datas,function(a){
 
 						alerts();
 						get_dromic(uriID);
@@ -6263,7 +6263,7 @@ function addFamIECS(){
 						msgbox("Kindly indicate Evacuation Center Status to continue!");
 					}else{
 
-						$.getJSON(serverip+"savenewEC",datas,function(a){
+						$.getJSON("/Pages/savenewEC",datas,function(a){
 
 							alerts();
 							get_dromic(uriID);
@@ -6303,7 +6303,7 @@ function addFamIECS(){
 
 				}else{
 
-					$.getJSON(serverip+"savenewEC",datas,function(a){
+					$.getJSON("/Pages/savenewEC",datas,function(a){
 
 						alerts();
 						get_dromic(uriID);
@@ -6400,7 +6400,7 @@ function addFamAECS(){
 						msgbox("Kindly indicate Evacuation Center Status to continue!");
 					}else{
 
-						$.getJSON(serverip+"savenewEC",datas,function(a){
+						$.getJSON("/Pages/savenewEC",datas,function(a){
 
 							alerts();
 							get_dromic(uriID);
@@ -6444,7 +6444,7 @@ function addFamAECS(){
 
 				}else{
 
-					$.getJSON(serverip+"savenewEC",datas,function(a){
+					$.getJSON("/Pages/savenewEC",datas,function(a){
 
 						alerts();
 						get_dromic(uriID);
@@ -6543,7 +6543,7 @@ function addFamCECS(){
 						msgbox("Kindly indicate Evacuation Center Status to continue!");
 					}else{
 
-						$.getJSON(serverip+"savenewEC",datas,function(a){
+						$.getJSON("/Pages/savenewEC",datas,function(a){
 
 							alerts();
 							get_dromic(uriID);
@@ -6579,7 +6579,7 @@ function addFamCECS(){
 
 				}else{
 
-					$.getJSON(serverip+"savenewEC",datas,function(a){
+					$.getJSON("/Pages/savenewEC",datas,function(a){
 
 						alerts();
 						get_dromic(uriID);
@@ -6635,7 +6635,7 @@ function autocompleteEC(){
 	var dataq = [];
 	var datae = [];
 
-	$.getJSON(serverip+"getAllEC",datas,function(a){
+	$.getJSON("/Pages/getAllEC",datas,function(a){
 
 		for(var t in a['rs']){
 			dataq.push(a.rs[t].evacuation_name.toUpperCase());
@@ -6737,7 +6737,7 @@ function autocompleteOriginProvince(){
 	$('#ecplaceorigin').empty();
 
 
-	$.getJSON(serverip+"getAllOriginProvince",datas,function(a){
+	$.getJSON("/Pages/getAllOriginProvince",datas,function(a){
 
 		$('#brgylocated_ec').append(
 			"<option value=''></option>"
@@ -6808,7 +6808,7 @@ function autocompleteOrigin(){
 		"<option value=''>-- Select Barangay --</option>"
 	);
 
-	$.getJSON(serverip+"getAllOrigin",datas,function(a){
+	$.getJSON("/Pages/getAllOrigin",datas,function(a){
 
 		for(var t in a){
 
@@ -6964,7 +6964,7 @@ function updateEC(i){
 
 		evac_id = i;
 
-		$.getJSON(serverip+"getECDetail",datas,function(a){
+		$.getJSON("/Pages/getECDetail",datas,function(a){
 
 			$('#addfaminsideECprov').val(a.rs[0].provinceid);
 
@@ -7167,7 +7167,7 @@ $('#updateECS').click(function(){
 	var uriID = URLID();
 
 
-	$.getJSON(serverip+"updateEC",datas,function(a){
+	$.getJSON("/Pages/updateEC",datas,function(a){
 		if(a == 1){
 
 			$('#loader').hide();
@@ -7196,7 +7196,7 @@ $('#deleteECS').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"deleteECS",datas,function(a){
+	    			$.getJSON("/Pages/deleteECS",datas,function(a){
 						if(a == 1){
 							$('#addfaminsideEC').modal("hide");
 							get_dromic(uriID);
@@ -7229,7 +7229,7 @@ $('#saveasnewrecord').click(function(){
 		id : uriID
 	}
 
-	$.getJSON(serverip+"getECMain",datas,function(a){
+	$.getJSON("/Pages/getECMain",datas,function(a){
 		addnewReport(a[0].dromic_id);
 	});
 
@@ -7264,9 +7264,9 @@ function savenewDromicEC(){
 	}else{
 		$('#addnewReport').modal('hide');
 
-		$.getJSON(serverip+"saveasnewrecordEC",datas,function(a){
+		$.getJSON("/Pages/saveasnewrecordEC",datas,function(a){
 
-			window.location.href = serverip2+"?XCqdPsmLaQwAyt="+a;
+			window.location.href = +Pages/"?XCqdPsmLaQwAyt="+a;
 
 		});
 	}
@@ -7318,7 +7318,7 @@ function savenewDamAss(){
 				ngo_asst 			: $('#nngo').val()
 			};
 
-			$.getJSON(serverip+"saveasnewDamAss",datas,function(a){
+			$.getJSON("/Pages/saveasnewDamAss",datas,function(a){
 
 				if(a == 1){
 					$('#adddamageasst').modal('hide');
@@ -7356,7 +7356,7 @@ function updateDamAss(o){
 		upDamAssid = [];
 		upDamAssid.push(o);
 
-		$.getJSON(serverip+"getDamAss",datas,function(a){
+		$.getJSON("/Pages/getDamAss",datas,function(a){
 
 			$('#addDamprov').val(a.rs[0].provinceid);
 
@@ -7409,7 +7409,7 @@ $('#upDamAss').click(function(){
 			ngo_asst 			: $('#nngo').val()
 		};
 
-		$.getJSON(serverip+"updateDamAss",datas,function(a){
+		$.getJSON("/Pages/updateDamAss",datas,function(a){
 
 			if(a == 1){
 				$('#adddamageasst').modal("hide");	
@@ -7437,7 +7437,7 @@ $('#deleteDamAss').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"deleteDamAss",datas,function(a){
+	    			$.getJSON("/Pages/deleteDamAss",datas,function(a){
 	    				if(a == 1){
 	    					$('#adddamageasst').modal('hide');
 	    					get_dromic(uriID);
@@ -7522,7 +7522,7 @@ function savenewfamOEC(){
 
 					};	
 
-					$.getJSON(serverip+"savenewfamOEC",datas,function(a){
+					$.getJSON("/Pages/savenewfamOEC",datas,function(a){
 						if(a == 1){
 							alerts();
 							get_dromic(uriID);
@@ -7558,7 +7558,7 @@ function updatefamOEC(o){
 		id : o
 	};
 
-	$.getJSON(serverip+"getFamOEC",datas,function(a){
+	$.getJSON("/Pages/getFamOEC",datas,function(a){
 
 		$('#addfamOECprov').val(a.rs[0].provinceid);
 
@@ -7617,7 +7617,7 @@ function updateFamOEC(){
 
 	};
 
-	$.getJSON(serverip+"updateFamOEC",datas,function(a){
+	$.getJSON("/Pages/updateFamOEC",datas,function(a){
 		if(a == 1){
 			$('#addfamOEC').modal("hide");	
 			get_dromic(uriID);
@@ -7642,7 +7642,7 @@ $('#delFamOEC').click(function(){
 		    		text: '<i class="fa fa-check"></i> Yes',
 		    		btnClass: 'btn-red',
 		    		action: function(){
-		    			$.getJSON(serverip+"delFamOEC",datas,function(a){
+		    			$.getJSON("/Pages/delFamOEC",datas,function(a){
 							if(a == 1){
 								$('#addfamOEC').modal("hide");	
 								get_dromic(uriID);
@@ -7718,7 +7718,7 @@ function savenewCAS(){
 				age 					: $('#addcasualtyage').val()
 			};
 
-			$.getJSON(serverip+"savenewCAS",datas,function(a){
+			$.getJSON("/Pages/savenewCAS",datas,function(a){
 				if(a == 1){
 					$('#addCasualtyModal').modal("hide");
 					get_dromic(uriID);
@@ -7758,7 +7758,7 @@ function getCasualty(id){
 
 		var iscasualty = $('[name="iscasualty"]');
 
-		$.getJSON(serverip+"getCasualty",datas,function(a){
+		$.getJSON("/Pages/getCasualty",datas,function(a){
 
 			$('#addcasualtylname').val(a.rs[0].lastname);
 			$('#addcasualtyfname').val(a.rs[0].firstname);
@@ -7831,7 +7831,7 @@ function updateCAS(){
 		age 					: $('#addcasualtyage').val()
 	};
 
-	$.getJSON(serverip+"updateCAS",datas,function(a){
+	$.getJSON("/Pages/updateCAS",datas,function(a){
 		if(a == 1){
 			$('#addCasualtyModal').modal("hide");
 			get_dromic(uriID);
@@ -7856,7 +7856,7 @@ function deleteCAS(){
 		    		text: '<i class="fa fa-check"></i> Yes',
 		    		btnClass: 'btn-red',
 		    		action: function(){
-		    			$.getJSON(serverip+"deleteCAS",datas,function(a){
+		    			$.getJSON("/Pages/deleteCAS",datas,function(a){
 							if(a == 1){
 								$('#addCasualtyModal').modal("hide");
 								get_dromic(uriID);
@@ -7876,7 +7876,7 @@ function deleteCAS(){
 
 // setInterval(function(){
 
-// 	$.getJSON(serverip+"countEOpCen",function(a){
+// 	$.getJSON("/Pages/countEOpCen",function(a){
 
 // 		$('#counteopcen').text(a['allcount']);
 // 		$('#countinec').text(a['inec']);
@@ -7901,7 +7901,7 @@ var picEnlarge = function(e){
 		id : e
 	}
 
-	$.getJSON(serverip+"picEnlarge",datas,function(a){
+	$.getJSON("/Pages/picEnlarge",datas,function(a){
 		$('#pictureModal').modal('show');
 		var image = document.getElementById('cpictureenlarge');
     	image.src = 'assets/drr_app/upload/'+a.uppicsdet[0].pics;
@@ -7910,7 +7910,7 @@ var picEnlarge = function(e){
 
 $('#markreadinec').click(function(){
 
-	$.getJSON(serverip+"markreadinec",function(a){
+	$.getJSON("/Pages/markreadinec",function(a){
 		console.log(1);
 	});
 
@@ -7918,7 +7918,7 @@ $('#markreadinec').click(function(){
 
 $('#markreaddamass').click(function(){
 
-	$.getJSON(serverip+"markreaddamass",function(a){
+	$.getJSON("/Pages/markreaddamass",function(a){
 		console.log(1);
 	});
 
@@ -7926,7 +7926,7 @@ $('#markreaddamass').click(function(){
 
 $('#markreadoutec').click(function(){
 
-	$.getJSON(serverip+"markreadoutec",function(a){
+	$.getJSON("/Pages/markreadoutec",function(a){
 		console.log(1);
 	});
 
@@ -7934,7 +7934,7 @@ $('#markreadoutec').click(function(){
 
 $('#markreadcasualty').click(function(){
 
-	$.getJSON(serverip+"markreadcasualty",function(a){
+	$.getJSON("/Pages/markreadcasualty",function(a){
 		console.log(1);
 	});
 
@@ -7942,7 +7942,7 @@ $('#markreadcasualty').click(function(){
 
 $('#markreaduploads').click(function(){
 
-	$.getJSON(serverip+"markreaduploads",function(a){
+	$.getJSON("/Pages/markreaduploads",function(a){
 		console.log(1);
 	});
 
@@ -7954,7 +7954,7 @@ $('#markreaduploads').click(function(){
 // 	//viewMessage();
 // 	//getquake();
 
-// 	$.getJSON(serverip+"countEOpCen",function(a){
+// 	$.getJSON("/Pages/countEOpCen",function(a){
 // 		$('#counteopcen').text(a['allcount']);
 // 	});
 
@@ -7967,7 +7967,7 @@ var peopcen = $('#markreadinec');
 
 // 	setInterval(function(e){
 
-// 		$.getJSON(serverip+"countEOpCen",function(a){
+// 		$.getJSON("/Pages/countEOpCen",function(a){
 
 // 			$('#counteopcen').text(a['allcount']);
 // 			$('#countinec').text(a['inec']);
@@ -8081,7 +8081,7 @@ var divinbox = $('#divinbox');
 
 if(divinbox.length){
 
-	$.getJSON(serverip+"getDromic",function(a){
+	$.getJSON("/Pages/getDromic",function(a){
 		for(var h in a){
 			$('#disasterreportstitle').append(
 				"<option value='"+a[h].id+"'>"+a[h].disaster_name+"</option>"
@@ -8563,7 +8563,7 @@ $('#savetodisasterreport').click(function(){
 		},2000)
 	}else{
 
-		$.getJSON(serverip+"savetoDisasterReport",datas,function(a){
+		$.getJSON("/Pages/savetoDisasterReport",datas,function(a){
 			if(a == 0){
 				msgbox("No latest report created with the selected disaster title.")
 			}else{
@@ -8664,7 +8664,7 @@ $('#ecinow').mask('0');
 
 function getquake(){
 
-	$.getJSON(serverip+"get_allquake",function(a){
+	$.getJSON("/Pages/get_allquake",function(a){
 		if(a['quake'].length > 0){
 			for(var j in a['quake']){
 			  var body = "Earthquake Alert: Location: "+a['quake'][j].location+" Mag.: "+a['quake'][j].magnitude+" Depth: "+a['quake'][j].depth;
@@ -8693,7 +8693,7 @@ Date.prototype.timeNow = function(){
 
 function getEarthquake(){
 
-	$.getJSON(serverip+"getEarthquake",function(a){
+	$.getJSON("/Pages/getEarthquake",function(a){
 		for(var g in a){
 			$('#tblearthquake tbody').append(
 				"<tr>"+
@@ -8719,7 +8719,7 @@ function getEarthquake(){
 
 function weathertextforecast(){
 
-	$.getJSON(serverip+"getWeather",function(response){
+	$.getJSON("/Pages/getWeather",function(response){
 
 		console.log(response);
 
@@ -8894,7 +8894,7 @@ $("#tbl_qrtsstaff").on('click','.removeSStaff',function(){
 			    		text: '<i class="fa fa-check"></i> Yes',
 			    		btnClass: 'btn-red',
 			    		action: function(){
-			    			$.getJSON(serverip+"deleteQRTTeamDriverStaff",datas,function(a){
+			    			$.getJSON("/Pages/deleteQRTTeamDriverStaff",datas,function(a){
 			    				QRTTeams();
 			    			});
 			            }
@@ -8929,7 +8929,7 @@ $("#tbl_qrtdriver").on('click','.removeDriver',function(){
 			    		text: '<i class="fa fa-check"></i> Yes',
 			    		btnClass: 'btn-red',
 			    		action: function(){
-			    			$.getJSON(serverip+"deleteQRTTeamDriverStaff",datas,function(a){
+			    			$.getJSON("/Pages/deleteQRTTeamDriverStaff",datas,function(a){
 			    				QRTTeams();
 			    			});
 			            }
@@ -8952,7 +8952,7 @@ $('#qrtteamnumber').change(function(){
 		number : $(this).val()
 	}
 
-	$.getJSON(serverip+"checkQRTNumber",datas,function(response){
+	$.getJSON("/Pages/checkQRTNumber",datas,function(response){
 		if(response.length >= 1){
 			alertQRTNumberExist();
 			$('#qrtteamnumber').val("");
@@ -9014,7 +9014,7 @@ $('#savedata_qrt').click(function(){
 			qdriver
 		}
 
-		$.getJSON(serverip+"saveQRT",datas,function(response){
+		$.getJSON("/Pages/saveQRT",datas,function(response){
 			if(response == 1){
 				alerts();
 				$('#resetdata_qrt').trigger('click');
@@ -9073,7 +9073,7 @@ $('#updatedata_qrt').click(function(){
 			qdriver
 		}
 
-		$.getJSON(serverip+"updateQRT",datas,function(response){
+		$.getJSON("/Pages/updateQRT",datas,function(response){
 			if(response == 1){
 				alerts();
 				QRTTeams();
@@ -9093,7 +9093,7 @@ function QRTTeams(){
 
 	$('#qrtteamspanel').empty();
 
-	$.getJSON(serverip+"getAllQRT",function(response){
+	$.getJSON("/Pages/getAllQRT",function(response){
 		for(var i = 0; i < response['team'].length ; i++){
 			if(i == 0){
 				var ins = "in";
@@ -9147,7 +9147,7 @@ function UpdateQRTTeam(id){
 		id 	: id
 	};
 
-	$.getJSON(serverip+"getSpecQRT",datas,function(a){
+	$.getJSON("/Pages/getSpecQRT",datas,function(a){
 		$('#tbl_qrtsstaff tbody').empty();
 		$('#tbl_qrtdriver tbody').empty();
 		$('#qrtteamnumber').val(a['members'][0].qrt_team_id);
@@ -9235,7 +9235,7 @@ $('#deletedata_qrt').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"deleteQRTTeam",datas,function(a){
+	    			$.getJSON("/Pages/deleteQRTTeam",datas,function(a){
 	    				$('#resetdata_qrt').trigger("click");
 	    			});
 	            }
@@ -9256,7 +9256,7 @@ if(aff_families.length){
 
 function dashboard(){
 
-	$.getJSON(serverip+"getDashboardData",function(response){
+	$.getJSON("/Pages/getDashboardData",function(response){
 
 		$('#aff_families').text(response.aff_family.toLocaleString());
 		$('#aff_individuals').text(response.aff_person.toLocaleString());
@@ -9837,7 +9837,7 @@ $('#saveassistance').click(function(){
 		    }
 		});
 	}else{
-		$.getJSON(serverip+"saveFNFILIST",datas,function(response){
+		$.getJSON("/Pages/saveFNFILIST",datas,function(response){
 			if(response == 1){
 				alerts();
 				get_dromic(urlid);
@@ -9877,7 +9877,7 @@ function get_augmentation_list(month,year,assttyperelief){
 		assttyperelief 	: assttyperelief
 	};
 
-	$.getJSON(serverip+"get_augmentation_assistance",datas,function(a){
+	$.getJSON("/Pages/get_augmentation_assistance",datas,function(a){
 
 		for(var i in a){
 
@@ -9968,7 +9968,7 @@ function get_reliefassistance_report(yearss){
 		tyears : yearss
 	}
 
-	$.getJSON(serverip+"get_augmentation_assistance1",datas,function(a){
+	$.getJSON("/Pages/get_augmentation_assistance1",datas,function(a){
 
 
 		var lgus = a.aug_data;
@@ -10230,7 +10230,7 @@ function get_reliefassistance_report(yearss){
 
 		$('#tbl_ffwassistance tbody').empty();
 
-		$.getJSON(serverip+"get_augmentation_assistanceffw",datas,function(a){
+		$.getJSON("/Pages/get_augmentation_assistanceffw",datas,function(a){
 
 			var lgus = a;
 
@@ -10491,7 +10491,7 @@ function get_reliefassistance_report(yearss){
 
 		$('#tbl_esaassistance tbody').empty();
 
-		$.getJSON(serverip+"get_augmentation_assistanceesa",datas,function(a){
+		$.getJSON("/Pages/get_augmentation_assistanceesa",datas,function(a){
 
 			var lgus = a;
 
@@ -10729,7 +10729,7 @@ function get_reliefassistance_report(yearss){
 	setTimeout(function(){
 		$('#tbl_cfwassistance tbody').empty();
 
-		$.getJSON(serverip+"get_augmentation_assistancecfw",datas,function(a){
+		$.getJSON("/Pages/get_augmentation_assistancecfw",datas,function(a){
 
 			var lgus = a;
 
@@ -10966,7 +10966,7 @@ function get_reliefassistance_report(yearss){
 		});
 
 
-		$.getJSON(serverip+"get_unique_lgus",datas,function(a){
+		$.getJSON("/Pages/get_unique_lgus",datas,function(a){
 			$('#glguservedu').text(addComma(a[0].count));
 		});
 
@@ -10985,7 +10985,7 @@ function get_reliefassistance_report(yearss){
 
 		$('#tbl_assistanceperdisaster tbody').empty();
 
-		$.getJSON(serverip+"get_augmentation_assistanceperd",datas,function(a){
+		$.getJSON("/Pages/get_augmentation_assistanceperd",datas,function(a){
 
 			var aug_types = [
 				{
@@ -11514,7 +11514,7 @@ if(bub_count_issues.length){
 
 // 	var bub_count = 0;
 // 	$('#issuesfound').empty();
-// 	$.getJSON(serverip+"issuesfound",datas,function(a){
+// 	$.getJSON("/Pages/issuesfound",datas,function(a){
 // 		for(var i in a){
 // 			if(a[i].person_cum > a[i].tot_population){
 // 				bub_count = bub_count + 1;
@@ -11550,7 +11550,7 @@ $('#city_dam_per_brgy').change(function(){
 		"<option value=''>-- Select Barangay --</option>"
 	);
 
-	$.getJSON(serverip+"getAllOrigin",datas,function(a){
+	$.getJSON("/Pages/getAllOrigin",datas,function(a){
 
 		for(var t in a){
 			$('#brgy_dam_per_brgy').append(
@@ -11573,7 +11573,7 @@ $('#close_edit_modal').click(function(){
 		id 				: URLID()
 	}
 
-	$.getJSON(serverip+"get_can_edit",datum,function(a){
+	$.getJSON("/Pages/get_can_edit",datum,function(a){
 		if(a == 0){
 			$('#savedata_dam_per_brgy').hide();
 			$('#saveBrgytoArray').hide();
@@ -11724,7 +11724,7 @@ function checkBrgyinDatabase(disaster_title_id, municipality_id, brgy_id){
 		brgy_id 					: brgy_id
 	};
 
-  return $.getJSON(serverip + "checkBrgy_tbl_damage_per_brgy", datas)
+  return $.getJSON("/Pages/checkBrgy_tbl_damage_per_brgy", datas)
     .then(function(count) {
         return count;
     })
@@ -11744,7 +11744,7 @@ $('#savedata_dam_per_brgy').click(function(){
 			data_dam_per_brgy_arr
 		}
 
-		let result = $.getJSON(serverip+"saveDamageperBrgy",data);
+		let result = $.getJSON("/Pages/saveDamageperBrgy",data);
 
 		result.then(function(response){
 
@@ -11770,7 +11770,7 @@ if(assistancetype_li.length){
 		"<option value=''>-- Assistance Type --</option>"
 	);
 
-	$.getJSON(serverip+"get_assistancetype_li",function(a){
+	$.getJSON("/Pages/get_assistancetype_li",function(a){
 		for(var i in a){
 			$('#assistancetype').append(
 				"<option value='"+a[i].assistance_type_sub_gen+"'>"+a[i].assistance_name+"</option>"
@@ -11778,7 +11778,7 @@ if(assistancetype_li.length){
 		}
 	});
 
-	$.getJSON(serverip+"get_disaster_events",function(a){
+	$.getJSON("/Pages/get_disaster_events",function(a){
 		for(var i in a){
 			$('#disasterevent').append(
 				"<option value='"+a[i].id+"'>"+a[i].disaster_name+"</option>"
@@ -11799,7 +11799,7 @@ $('#assistancetype').change(function(){
 		$('#chooseasst').empty().append(
 			"<option value=''>--- Select Assistance ---</option>"
 		)
-		$.getJSON(serverip+"get_fnfi",function(a){
+		$.getJSON("/Pages/get_fnfi",function(a){
 			for(var i in a){
 				$('#chooseasst').append(
 					"<option value='"+a[i].id+"'>"+a[i].fnfi_name+"</option>"
@@ -11808,7 +11808,7 @@ $('#assistancetype').change(function(){
 		});
 	}else{
 		$('#chooseasst').empty();
-		$.getJSON(serverip+"get_assistancetype_li",function(a){
+		$.getJSON("/Pages/get_assistancetype_li",function(a){
 			for(var i in a){
 				if(a[i].assistance_type_sub_gen == ass){
 					$('#chooseasst').append(
@@ -11894,7 +11894,7 @@ $('#saveasst_spec').click(function(){
 		msgbox("Kindly fill province, municipality, number served, assistance type and augmentation date to continue!");
 	}else{
 
-		$.getJSON(serverip+"save_augmentation_assistance",datas,function(a){
+		$.getJSON("/Pages/save_augmentation_assistance",datas,function(a){
 
 			var assttyperelief = $('#assttyperelief').val();
 
@@ -12102,7 +12102,7 @@ function congressional(month,year){
 
 	$('#tbl_congressional tbody').empty();
 
-	$.getJSON(serverip+"get_congressional",datas,function(response){
+	$.getJSON("/Pages/get_congressional",datas,function(response){
 
 		$('#congreloader').hide();
 
@@ -12465,7 +12465,7 @@ function sem_congressional(){
 
 	$('#tbl_congressional_sem tbody').empty();
 
-	$.getJSON(serverip+"get_congressional_sem",function(response){
+	$.getJSON("/Pages/get_congressional_sem",function(response){
 
 		$('#congreloader').hide();
 
@@ -12674,7 +12674,7 @@ function yearly_congressional(year){
 
 	$('#tbl_congressional_year tbody').empty();
 
-	$.getJSON(serverip+"get_congressional_yearly",datas,function(response){
+	$.getJSON("/Pages/get_congressional_yearly",datas,function(response){
 
 		$('#congreloader').hide();
 
@@ -12884,7 +12884,7 @@ function quarterly_congressional(quarter,year){
 
 	$('#tbl_congressional_quarter tbody').empty();
 
-	$.getJSON(serverip+"get_congressional_quart",datas,function(response){
+	$.getJSON("/Pages/get_congressional_quart",datas,function(response){
 
 		$('#congreloader').hide();
 
@@ -13220,7 +13220,7 @@ function getMobileUsers(){
 
 	$('#my_users_list tbody').empty();
 
-	$.getJSON(serverip+"get_mobile_user",function(a){
+	$.getJSON("/Pages/get_mobile_user",function(a){
 
 		for(var i in a){
 
@@ -13340,7 +13340,7 @@ $('#btnsaveactivation').click(function(){
 
 				}
 
-				$.getJSON(serverip+"deactivateuser",datas,function(a){
+				$.getJSON("/Pages/deactivateuser",datas,function(a){
 					getMobileUsers();
 
 					useractivation = -1;
@@ -13382,7 +13382,7 @@ $('#btnsaveactivation').click(function(){
 
 				}
 
-				$.getJSON(serverip+"activateuser",datas,function(a){
+				$.getJSON("/Pages/activateuser",datas,function(a){
 
 					getMobileUsers();
 
@@ -13419,7 +13419,7 @@ function ReportsAssignment(){
 
 	$('#tbl_users_list tbody').empty();
 
-	$.getJSON(serverip+"get_my_disaster",datas,function(a){
+	$.getJSON("/Pages/get_my_disaster",datas,function(a){
 
 		for(var i = 0 ; i < a.disaster.length ; i++){
 
@@ -13593,7 +13593,7 @@ $('#btn_reportassignment').click(function(){
 
 			    			$('#loader').show();
 
-			    			$.getJSON(serverip+"save_reports_assignment",datas,function(a){
+			    			$.getJSON("/Pages/save_reports_assignment",datas,function(a){
 
 			    				$('#loader').hide();
 
@@ -13685,7 +13685,7 @@ function saveComment(){
 		msgbox("Kindly input message to continue!");
 	}else{
 
-		$.getJSON(serverip+"save_report_comment",datas,function(a){
+		$.getJSON("/Pages/save_report_comment",datas,function(a){
 
 			if(a == 1){
 
@@ -13718,7 +13718,7 @@ function get_comments(){
 
 	$('#div_comment').empty();
 
-	$.getJSON(serverip+"get_comments",datas,function(a){
+	$.getJSON("/Pages/get_comments",datas,function(a){
 
 		var c = 0;
 
@@ -13881,7 +13881,7 @@ function saveReply(i,id){
 
 	}else{
 
-		$.getJSON(serverip+"save_reply",datas,function(a){
+		$.getJSON("/Pages/save_reply",datas,function(a){
 
 			if(a == 1){
 
@@ -13924,7 +13924,7 @@ function uploadFile(){
 		}
 
 
-		$.getJSON(serverip+"get_if_narrative",datas,function(a){
+		$.getJSON("/Pages/get_if_narrative",datas,function(a){
 
 
 			if(a >= 1){
@@ -13970,7 +13970,7 @@ function uploadFile(){
 
 									$.ajax({
 
-										url 			: serverip+'upload_file',
+										url 			: 'Pages/upload_file',
 										method 			: "POST",
 										data 			: form_data,
 										contentType 	: false,
@@ -14046,7 +14046,7 @@ function uploadFile(){
 
 					$.ajax({
 
-						url 			: serverip+'upload_file',
+						url 			: 'Pages/upload_file',
 						method 			: "POST",
 						data 			: form_data,
 						contentType 	: false,
@@ -14123,7 +14123,7 @@ $('#disaster_map').click(function(){
 
 	}
 
-	$.getJSON(serverip+"get_map",datas,function(states){
+	$.getJSON("/Pages/get_map",datas,function(states){
 
 		var map = L.map('mapid').setView([8.8015, 125.7407], 8.4);
 
@@ -14191,7 +14191,7 @@ $('#disaster_map').click(function(){
 
 		    };
 
-		    $.getJSON(serverip+"get_feature_info",datas,function(a){
+		    $.getJSON("/Pages/get_feature_info",datas,function(a){
 
 		    	var html = "<table class='table table-condensed table-bordered'>"+
 		    					"<tbody>"+
@@ -14325,7 +14325,7 @@ function addnFamIEC(){
  
 		};
 
-		$.getJSON(serverip+"save_affected",datas,function(a){
+		$.getJSON("/Pages/save_affected",datas,function(a){
 
 			if(a == 1){
 
@@ -14366,7 +14366,7 @@ function addnFamIEC(){
 				    		keys: ['enter'],
 				    		action: function(){
 
-				    			$.getJSON(serverip+"save_affected2",datas,function(a){
+				    			$.getJSON("/Pages/save_affected2",datas,function(a){
 
 				    				$.confirm({
 									    title: '<span class="green">Success</span>',
@@ -14432,7 +14432,7 @@ function addnFamAECS(){
  
 		};
 
-		$.getJSON(serverip+"save_affected",datas,function(a){
+		$.getJSON("/Pages/save_affected",datas,function(a){
 
 			if(a == 1){
 
@@ -14472,7 +14472,7 @@ function addnFamAECS(){
 				    		keys: ['enter'],
 				    		action: function(){
 
-				    			$.getJSON(serverip+"save_affected2",datas,function(a){
+				    			$.getJSON("/Pages/save_affected2",datas,function(a){
 
 				    				$.confirm({
 									    title: '<span class="green">Success</span>',
@@ -14591,11 +14591,11 @@ var updateSexAgeData = (data) => {
 		$('#addSexAgeDataModal').modal('show');
 		$('#deleteSexAgeDate').show();
 
-		$.getJSON(serverip+"searchSexAgeData",data,function(a){
+		$.getJSON("/Pages/searchSexAgeData",data,function(a){
 
 			$('#provinceSexAge').val(a[0].province_id);
 
-			$.getJSON(serverip+"get_municipality",function(city){  
+			$.getJSON("/Pages/get_municipality",function(city){  
 			    for(var i in city){
 			    	if(a[0].province_id == city[i].provinceid){
 			    		$('#citySexAge').append(
@@ -14673,7 +14673,7 @@ $('#deleteSexAgeDate').click(function(){
 	    		text: '<i class="fa fa-check"></i> Yes',
 	    		btnClass: 'btn-red',
 	    		action: function(){
-	    			$.getJSON(serverip+"deleteSexAgeData",data,function(a){
+	    			$.getJSON("/Pages/deleteSexAgeData",data,function(a){
 	    				if(a === '1' || a === 1){
 	    					alerts();
 							$('#addSexAgeDataModal').modal('hide');
@@ -14810,7 +14810,7 @@ $('#saveSexAgeDate').click(function(){
 			msgbox("Kindly input data to continue!");
 
 		}else{
-			$.getJSON(serverip+"saveSexAgeData",data,function(a){
+			$.getJSON("/Pages/saveSexAgeData",data,function(a){
 				if(a === '1' || a === 1){
 					alerts();
 					$('#addSexAgeDataModal').modal('hide');
@@ -14825,7 +14825,7 @@ $('#saveSexAgeDate').click(function(){
 					    		text: '<i class="fa fa-check"></i> Yes',
 					    		btnClass: 'btn-red',
 					    		action: function(){
-					    			$.getJSON(serverip+"updateSexAgeData",data,function(a){
+					    			$.getJSON("/Pages/updateSexAgeData",data,function(a){
 					    				if(a === '1' || a === 1){
 					    					alerts();
 											$('#addSexAgeDataModal').modal('hide');
@@ -14879,7 +14879,7 @@ $(function() {
 
 					upDamAssid = [];
 
-					$.getJSON(serverip+"getDamAssMain",datas,function(a){
+					$.getJSON("/Pages/getDamAssMain",datas,function(a){
 
 						upDamAssid.push(a.rs[0].id);
 
@@ -14939,7 +14939,7 @@ $(function() {
 
 		            }
 
-					$.getJSON(serverip+"getAllAffected",datas,function(a){
+					$.getJSON("/Pages/getAllAffected",datas,function(a){
 
 						$('#addfamNinsideECprov').val(a.city[0].provinceid);
 
@@ -14979,7 +14979,7 @@ $(function() {
 
 		            }
 
-					$.getJSON(serverip+"getmunicipality",datas,function(a){
+					$.getJSON("/Pages/getmunicipality",datas,function(a){
 
 						$('#provinceAssistance').val(a[0].provinceid);
 
@@ -15017,7 +15017,7 @@ $(function() {
 
 		            }
 
-					$.getJSON(serverip+"getmunicipality",datas,function(a){
+					$.getJSON("/Pages/getmunicipality",datas,function(a){
 
 						$('#province_dam_per_brgy').val(a[0].provinceid);
 
@@ -15131,7 +15131,7 @@ function closeAllECs(id){
 	    		btnClass: 'btn-red',
 	    		action: function(){
 	    			
-	    			$.getJSON(serverip+"closeAllECs",data,function(a){
+	    			$.getJSON("/Pages/closeAllECs",data,function(a){
 	    				if(a === '1' || a === 1){
 	    					get_dromic(URLID());
 	    				}

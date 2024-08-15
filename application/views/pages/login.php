@@ -352,7 +352,7 @@
           if(datas.username == "" || datas.password == ""){
             message("Username and password are required!");
           }else{
-            $.getJSON(serverip+"login?callback=?",datas,function(a){
+            $.getJSON("Pages/login?callback=?",datas,function(a){
               if(a == 0){
 
                // message("")
@@ -389,7 +389,7 @@
             "<option value=''>-- Select Province --</option>"
         );  
 
-        $.getJSON(serverip+"get_province",function(a){  
+        $.getJSON("Pages/get_province",function(a){  
 
             for(var i in a){
               $('#province').append(
@@ -411,7 +411,7 @@
             "<option value=''>-- Select City/Municipality --</option>"
         );
 
-        $.getJSON(serverip+"get_municipality",function(a){  
+        $.getJSON("Pages/get_municipality",function(a){  
             for(var i in a){
               if(pid == a[i].provinceid){
                 $('#municipality').append(
@@ -460,7 +460,7 @@
 
             }else{
 
-              $.getJSON(serverip+"signup_user",datas,function(a){  
+              $.getJSON("Pages/signup_user",datas,function(a){  
                   if(a == 1){
 
                     msgboxsuccess("User account successfully created. Wait for the administrator to activate your account before logging in. Thanks!");
